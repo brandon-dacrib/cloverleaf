@@ -1,3 +1,4 @@
+#sample script that gets a url and replies with the response
 require 'rubygems'
 require 'sinatra'
 require	'httparty'
