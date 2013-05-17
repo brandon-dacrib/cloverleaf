@@ -9,4 +9,6 @@ end
 get '/lighton' do
   response = HTTParty.get('http://dacrib.net/lighton')
   puts response.body, response.code, response.message, response.headers.inspect
+  @output = response.code, response.body
+  "#{@output}"
 end
