@@ -11,3 +11,9 @@ I have a few goals.
 3. To create a plugin based architecture that makes it easy for others to add support for new devices, or protocols.
 4. Documentation, documentation, documentation
 5. Have fun.
+
+
+status
+======
+I have a working proof of concept using the sinatra framework, and some ruby gems. I have added some documentation on the architecture here:
+https://docs.google.com/a/dacrib.net/drawings/d/11l1NVXZnwyDFaAD7JPb3f_WBsg2ZSJNeYFSN89BED2w
