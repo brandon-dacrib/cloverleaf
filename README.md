@@ -15,5 +15,5 @@ I have a few goals.
 
 status
 ======
-I have a working proof of concept using the sinatra framework, and some ruby gems. I have added some documentation on the architecture here:
-https://docs.google.com/a/dacrib.net/drawings/d/11l1NVXZnwyDFaAD7JPb3f_WBsg2ZSJNeYFSN89BED2w
+I have a working proof of concept using the sinatra framework, and some other ruby gems. I have added some documentation on the architecture here:
+http://dacrib.net/cloverleaf/docs/
