@@ -16,4 +16,4 @@ I have a few goals.
 status
 ======
 I have a working proof of concept using the sinatra framework, and some other ruby gems. I have added some documentation on the architecture here:
-http://dacrib.net/cloverleaf/docs/
+http://brandon-dacrib.github.io/cloverleaf
