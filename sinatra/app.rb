@@ -23,3 +23,5 @@ get '/door-closed' do
   system("say the front door is closed")
 end
 #######################################
+
+require 'routes/say.rb'
