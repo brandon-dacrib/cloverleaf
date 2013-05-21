@@ -1,23 +1,23 @@
 #define insteon devices
 #insteon switches and buttons
-- address:  '1C.56.67'
-  devtype:  'switchlinc'
-  devname:  'lr light switch'
+- address: '1C.56.67'
+  devtype: 'switchlinc'
+  devname: 'lr light switch'
 
 #insteon bulbs
-- address:      '21.EE.7C'
-  devtype:    'lightbulb'
-  devname:    'master bedroom lamp'
+- address: '21.EE.7C'
+  devtype: 'lightbulb'
+  devname: 'master bedroom lamp'
 
 #insteon applianclincs
-- address:  '20.BC.93'
-  devtype:    'appliancelinc'
-  devname:    'lr lights'
+- address: '20.BC.93'
+  devtype: 'appliancelinc'
+  devname: 'lr lights'
 
 #insteon motion sensors
-- address:  '23.40.76'
-  devtype:    'motionsensor'
-  devname:    'front door sensor'
+- address: '23.40.76'
+  devtype: 'motionsensor'
+  devname: 'front door sensor'
 
 #insteon scene
 #- scene_address:   ''
