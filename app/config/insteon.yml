@@ -10,6 +10,7 @@
  address: '21.EE.7C'
  devtype: 'lightbulb'
  devname: 'master bedroom lamp'
+ dimmable: '1'
 
 #insteon applianclincs
 2:
