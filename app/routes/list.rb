@@ -1,8 +1,14 @@
 #sample sinatra
 require 'rubygems'
 require 'sinatra'
+require 'yaml'
 
 get '/list' do
-  insteon = YAML.load(File.open('config/insteon.yml'))
-  response = puts insteon[0]['address'],insteon[0]['devtype'],insteon[0]['devname']
+  insteon = YAML.load_file 'config/insteon.yml'
+  insteon.each_key { |key|
+    address = insteon[key]['address']
+    devtype = insteon[key]['devtype']
+    devname = insteon[key]['devname']
+    response = puts "#{address} => #{devtype} => #{devname}"
+  }
 end
