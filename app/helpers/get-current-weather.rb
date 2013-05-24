@@ -1,3 +1,4 @@
+#!/usr/bin/ruby
 #credit goes to this guy https://github.com/stewart/weather-api
 require 'rubygems'
 require 'weather-api'
@@ -9,7 +10,5 @@ require 'weather-api'
 response = Weather.lookup(12761374)
 
 print <<EOT
-#{response.title}
-#{response.condition.temp} degrees
-#{response.condition.text}
+The temperature is #{response.condition.temp} degrees, and it is #{response.condition.text}.
 EOT

@@ -8,4 +8,3 @@ require 'sinatra'
 get '/say/:utterance' do
   system("helpers/speech.sh #{params[:utterance]}")
 end
-
