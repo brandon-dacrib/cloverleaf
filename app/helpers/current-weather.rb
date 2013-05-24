@@ -1,15 +1,8 @@
-#credit goes to this guy https://github.com/stewart/weather-api
+#credit goes to this guy https://github.com/attack/barometer
 require 'rubygems'
-require 'weather-api'
+require 'barometer'
 
-# look up WOEID via http://weather.yahoo.com; enter location by city
-# name or zip and WOEID is at end of resulting page url.
+barometer = Barometer.new('New York')
+weather = barometer.measure
 
-#make this a var based on zip code in a yaml file
-response = Weather.lookup(12761374)
-
-print <<EOT
-#{response.title}
-#{response.condition.temp} degrees
-#{response.condition.text}
-EOT
+puts weather.current.temperature
