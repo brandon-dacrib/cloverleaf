@@ -9,6 +9,3 @@ require 'routes/do.rb'
 require 'routes/sense.rb'
 require 'routes/list.rb'
 require 'routes/get.rb'
-
-api_host = localhost
-api_port = 4567
