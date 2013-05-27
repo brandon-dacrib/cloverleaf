@@ -1,4 +1,3 @@
-#!/usr/bin/ruby
 #credit goes to this guy https://github.com/stewart/weather-api
 require 'rubygems'
 require 'weather-api'
