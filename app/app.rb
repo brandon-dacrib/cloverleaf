@@ -3,6 +3,7 @@ require 'rubygems'
 require 'sinatra'
 require	'httparty'
 
+require 'routes/index.rb'
 require 'routes/hello.rb'
 require 'routes/say.rb'
 require 'routes/do.rb'
