@@ -8,8 +8,8 @@ get '/do/*/1' do
   "#{@output}"
 end
 
-get '/do/*/0' do
-  response = HTTParty.get('http://dacrib.net/cloverleaf/test/lightoff')
+get '/do/:nodeid/0' do
+  response = HTTParty.get('http://192.168.1.204/rest/nodes/#{params[:nodeid]}/cmd/DOF')
   puts response.body, response.code, response.message, response.headers.inspect
   @output = response.code, response.body
   "#{@output}"
