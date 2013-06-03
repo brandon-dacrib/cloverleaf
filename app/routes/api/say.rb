@@ -6,7 +6,7 @@ require 'sinatra'
 #http://danfountain.com/2013/03/raspberry-pi-text-to-speech/
 
 get '/say/:utterance' do
-	system("helpers/speech.sh #{params[:utterance]}")
+	system("helpers/tts.rb #{params[:utterance]}")
 	@output = 'OK'
 	"#{@output}"
 end
