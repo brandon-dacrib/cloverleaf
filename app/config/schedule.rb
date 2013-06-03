@@ -10,7 +10,7 @@ every :weekday, :at => '7:30pm' do
 	command "ruby #{cwd}/helpers/say.rb 'Gabriel get in the shower' "
 end
 
-every :weekday, :at => '8:00pm' do
+every :weekday, :at => '8:30pm' do
 	command "ruby #{cwd}/helpers/say.rb 'Gabriel it is time to read' "
 end
 
