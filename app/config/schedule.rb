@@ -1,7 +1,5 @@
 # Use this file to easily define all of your cron jobs.
-
 cwd = Dir.pwd
-
 every '00 08-22 * * *' do
 	command "ruby #{cwd}/helpers/get-current-hour.rb"
 end
@@ -12,8 +10,4 @@ end
 
 every :weekday, :at => '8:30pm' do
 	command "ruby #{cwd}/helpers/say.rb 'Gabriel it is time to read' "
-end
-
-every :weekday, :at => '9:00pm' do
-	command "ruby #{cwd}/helpers/say.rb 'Gabriel, it is your bedtime' "
 end
