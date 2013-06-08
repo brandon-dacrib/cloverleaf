@@ -2,28 +2,35 @@
 #insteon switches and buttons
 0:
  address: '1C.56.67' 
- devtype: 'switchlinc'
- devname: 'lr light switch'
+ devtype: 'switch'
+ devname: 'bedroom accent lights'
+ control: 'ISY'
 
 #insteon bulbs
 1:
  address: '21.EE.7C'
- devtype: 'lightbulb'
+ devtype: 'bulb'
  devname: 'master bedroom lamp'
  dimmable: '1'
+ control: 'ISY'
 
 #insteon applianclincs
 2:
  address: '20.BC.93'
- devtype: 'appliancelinc'
+ devtype: 'switch'
  devname: 'lr lights'
+ control: 'ISY'
 
 #insteon motion sensors
 3:
  address: '23.40.76'
- devtype: 'motionsensor'
+ devtype: 'motion'
  devname: 'front door sensor'
-
+ control: 'ISY'
 #insteon scene
 #- scene_address:   ''
 #scene_name:        ''
+
+# define the structure for a scene 
+#change address to nodeid and have it already in the right format 
+#add an example that uses control UDP
