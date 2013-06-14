@@ -11,3 +11,6 @@ end
 every :weekday, :at => '8:30pm' do
 	command "ruby #{cwd}/helpers/say.rb 'Gabriel it is time to read' "
 end
+
+every :weekday, :at => '8:55' do
+  command "ruby #{cwd}/helpers/say.rb 'Gabriel make sure you have brushed your teeth, and taken your medicine' "
