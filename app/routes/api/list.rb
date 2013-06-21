@@ -1,14 +1,13 @@
 #sample sinatra
 require 'rubygems'
 require 'sinatra'
-require 'yaml'
+require 'sqlite3'
 
 get '/list' do
-  insteon = YAML.load_file 'config/insteon.yml'
-  insteon.each_key { |key|
-    address = insteon[key]['address']
-    devtype = insteon[key]['devtype']
-    devname = insteon[key]['devname']
-    response = puts "#{address} => #{devtype} => #{devname}"
-  }
+  db = SQLite3::Database.new("/Users/brandon/Documents/devel/cloverleaf/app/db/sample.db")
+  db.execute("select * from devices") do |row|
+    print row 
+    print "\n"
+    end
+    "#{@output}"
 end
