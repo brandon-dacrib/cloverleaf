@@ -3,21 +3,25 @@ require 'rubygems'
 require 'sinatra'
 #require 'sqlite3'
 require 'data_mapper'
+require 'haml'
 #require 'dm-sqlite-adapter'
 
-DataMapper.setup(:default, 'sqlite://db/my_way_development')
-#DataMapper.setup(:default, 'sqlite://db/sample.db')
+#DataMapper.setup(:default, 'sqlite://db/my_way_development')
+DataMapper.setup(:default, 'sqlite:///Users/brandon/Documents/devel/cloverleaf/app/db/sample.db')
 
-class Device < DataMapper::Base
-  property :id, :text
-  property :address, :text
-  property :type, :string
-  property :name, :text
-  property :control, :string
-  property :protocol, :string
+class Device
+  include DataMapper::Resource
+  
+  property :id,       Serial
+  property :address,  String
+  property :type,     String
+  property :name,     Text
+  property :control,  String
+  property :protocol, String
 end
+DataMapper.finalize
 
 get '/list' do
-  @devices = Device  :limit => 10,
-  :order  => 'id'
+  @devices = Device.all
+  puts @devices
 end
