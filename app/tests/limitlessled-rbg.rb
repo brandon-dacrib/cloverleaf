@@ -14,4 +14,4 @@ require 'socket'
 # 20 xx 55 – Set Colour to xx = varies
 
 socket = UDPSocket.new
-socket.send('!?U', 0, '192.168.1.205', 50000)
+socket.send("\x21\x00\x55", 0, '192.168.1.205', 50000)
