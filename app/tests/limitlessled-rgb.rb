@@ -85,7 +85,7 @@ when "color"
   #convert that to a hex value
   colorcode = ["#{hexnum}"].pack('H*')
   puts "colorcode is #{colorcode}"
-  puts "I am sending \x20#{colorcode}\x55"
+  puts "I am sending '\x20#{colorcode}\x55'"
   
   set_color = "\x20#{colorcode}\x55" #going to need to sort out how to convert integers passed to hex + how the heck are these tabulated?
   socket = UDPSocket.new
