@@ -33,8 +33,11 @@ speed_up = "\x25\x00\x55"
 speed_down = "\x26\x00\x55"
 
 #set color
-set_color = "\x20\xa0\x55" #going to need to sort out how to convert integers passed to hex 
-
+#passed_color = ARGV[1]
+#puts passed_color
+#colorcode = "\x20" + '\x' + ARGV[1] + "\x55"
+#puts colorcode
+#set_color = "colorcode" #going to need to sort out how to convert integers passed to hex 
 
 ###############################################
 case ARGV[0]
@@ -71,8 +74,14 @@ when "slower"
   socket.send(speed_down, 0, wifi_bridge_ip, wifi_bridge_port)
   
 when "color"
+  #set color
+  passed_color = ARGV[1]
+  #puts passed_color
+  colorcode = '\x20' + '\x' + ARGV[1] + '\x55' #doesn't work yet
+  puts colorcode
+  set_color = "\x20\x9b\x55" #going to need to sort out how to convert integers passed to hex + how the heck are these tabulated?
   socket = UDPSocket.new
   socket.send(set_color, 0, wifi_bridge_ip, wifi_bridge_port)
   
-else puts "usage: ruby limitlessled-rgb.rb [on | off | bright| dim | faster | slower | color [hex color code]]"
+else puts "usage: ruby limitlessled-rgb.rb [on | off | bright| dim | faster | slower | color (hex value)]"
 end
