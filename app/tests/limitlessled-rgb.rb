@@ -76,10 +76,10 @@ when "slower"
 when "color"
   #set color
   passed_color = ARGV[1]
-  #puts passed_color
-  colorcode = '\x20' + '\x' + ARGV[1] + '\x55' #doesn't work yet
-  puts colorcode
-  set_color = "\x20\x9b\x55" #going to need to sort out how to convert integers passed to hex + how the heck are these tabulated?
+  puts "passed_color is #{passed_color}"
+  colorcode = passed_color.chr
+  puts "colorcode is #{colorcode}"
+  set_color = "\x20\#{colorcode}\x55" #going to need to sort out how to convert integers passed to hex + how the heck are these tabulated?
   socket = UDPSocket.new
   socket.send(set_color, 0, wifi_bridge_ip, wifi_bridge_port)
   
