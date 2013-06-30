@@ -77,13 +77,9 @@ when "color"
   #set color
   passed_color = ARGV[1]
   puts "passed_color is #{passed_color}"
-  
-  #convert it to base 16
-  hexnum = passed_color.to_i(base=16)
-  puts "hexnum is #{hexnum}"
-  
-  #convert that to a hex value
-  colorcode = ["#{hexnum}"].pack('H*')
+
+  #convert that to a hex value and then to an int
+  colorcode = ["#{passed_color}"].pack('H*')
   puts "colorcode is #{colorcode}"
   puts "I am sending '\x20#{colorcode}\x55'"
   
