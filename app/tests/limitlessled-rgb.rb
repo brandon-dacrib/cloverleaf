@@ -74,15 +74,16 @@ when "slower"
   socket.send(speed_down, 0, wifi_bridge_ip, wifi_bridge_port)
   
 when "color"
-  #set color
-  passed_color = ARGV[1]
+  #set color argument to be an integer
+  passed_color = ARGV[1].to_i
   puts "passed_color is #{passed_color}"
 
-  #convert that to a hex value and then to an int
+  #convert that to a hex value, doesn't work with values over 99 :( 
   colorcode = ["#{passed_color}"].pack('H*')
   puts "colorcode is #{colorcode}"
   puts "I am sending '\x20#{colorcode}\x55'"
   
+  #send the value
   set_color = "\x20#{colorcode}\x55" #going to need to sort out how to convert integers passed to hex + how the heck are these tabulated?
   socket = UDPSocket.new
   socket.send(set_color, 0, wifi_bridge_ip, wifi_bridge_port)
