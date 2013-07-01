@@ -102,5 +102,5 @@ when "color"
   socket = UDPSocket.new
   socket.send(set_color, 0, wifi_bridge_ip, wifi_bridge_port)
   
-else puts "usage: ruby limitlessled-rgb.rb [on|off|bright|dim|max(bright|dim)|modeup|modedown|faster|slower|white|color (1-255)]"
+else puts "usage: limitlessled-rgb.rb [on|off|bright|dim|max(bright|dim)|modeup|modedown|faster|slower|white|color (1-255)]"
 end
