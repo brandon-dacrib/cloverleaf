@@ -71,7 +71,7 @@ when "slower"
 when "white"
   for i in 0..19
     socket = UDPSocket.new
-    socket.send(mode_down, 0, wifi_bridge_ip, wifi_bridge_port
+    socket.send(mode_down, 0, wifi_bridge_ip, wifi_bridge_port)
   end
   
 when "color"
