@@ -81,11 +81,10 @@ when "color"
 
   #convert that to a hex value
   colorcode = passed_color.to_s(16)
-  puts "hex color code is #{colorcode}"
-  #puts "I am sending '\x20#{colorcode}\x55'"
+  #puts "hex color code is #{colorcode}"
   
-  #send the value
-  set_color = "\x20#{colorcode}\x55"
+  #send the value being sure to encode the color code into hex
+  set_color = "\x20#{colorcode.hex.chr}\x55"
   socket = UDPSocket.new
   socket.send(set_color, 0, wifi_bridge_ip, wifi_bridge_port)
   
