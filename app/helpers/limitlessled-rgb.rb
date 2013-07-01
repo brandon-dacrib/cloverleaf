@@ -52,6 +52,19 @@ when "dim"
   socket = UDPSocket.new
   socket.send(bright_down, 0, wifi_bridge_ip, wifi_bridge_port)
   
+when "maxbright"
+  for i in 0..9
+    socket = UDPSocket.new
+    socket.send(bright_up, 0, wifi_bridge_ip, wifi_bridge_port)
+    sleep 0.1
+  end
+  
+when "maxdim"
+  for i in 0..9
+    socket.send(bright_down, 0, wifi_bridge_ip, wifi_bridge_port)
+    sleep 0.1
+  end  
+  
 when "modeup"
   socket = UDPSocket.new
   socket.send(mode_up, 0, wifi_bridge_ip, wifi_bridge_port)
@@ -89,5 +102,5 @@ when "color"
   socket = UDPSocket.new
   socket.send(set_color, 0, wifi_bridge_ip, wifi_bridge_port)
   
-else puts "usage: ruby limitlessled-rgb.rb [on|off|bright|dim|modeup|modedown|faster|slower|white|color (1-255)]"
+else puts "usage: ruby limitlessled-rgb.rb [on|off|bright|dim|max(bright|dim)|modeup|modedown|faster|slower|white|color (1-255)]"
 end
