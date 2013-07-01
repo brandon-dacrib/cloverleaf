@@ -32,12 +32,6 @@ mode_down = "\x28\x00\x55"
 speed_up = "\x25\x00\x55"
 speed_down = "\x26\x00\x55"
 
-#set color
-#passed_color = ARGV[1]
-#puts passed_color
-#colorcode = "\x20" + '\x' + ARGV[1] + "\x55"
-#puts colorcode
-#set_color = "colorcode" #going to need to sort out how to convert integers passed to hex 
 
 ###############################################
 case ARGV[0]
