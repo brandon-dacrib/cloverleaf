@@ -79,7 +79,7 @@ when "color"
   puts "passed_color is #{passed_color}"
 
   #convert that to a hex value, doesn't work with values over 99 :( 
-  colorcode = ["#{passed_color}"].pack('H*')
+  colorcode = passed_color.to_s(16)
   puts "colorcode is #{colorcode}"
   puts "I am sending '\x20#{colorcode}\x55'"
   
