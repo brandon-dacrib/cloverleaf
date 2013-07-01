@@ -23,3 +23,15 @@ get '/do/:nodeid/0' do
   @output = response.message
   "#{@output}"
 end
+
+get '/do/limitlessledrgb/:state' do
+  system("helpers/limitlessled-rgb.rb #{params[:state]}")
+  @output = 'OK'
+  "#{@output}"
+end
+
+get '/do/limitlessledrgb/color/:color' do
+  system("helpers/limitlessled-rgb.rb color #{params[:color]}")
+  @output = 'OK'
+  "#{@output}"
+end
