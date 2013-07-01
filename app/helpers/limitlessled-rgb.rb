@@ -61,6 +61,7 @@ when "maxbright"
   
 when "maxdim"
   for i in 0..9
+    socket = UDPSocket.new
     socket.send(bright_down, 0, wifi_bridge_ip, wifi_bridge_port)
     sleep 0.1
   end  
