@@ -76,17 +76,17 @@ when "slower"
 when "color"
   #set color argument to be an integer
   passed_color = ARGV[1].to_i
-  puts "passed_color is #{passed_color}"
+  #puts "passed_color is #{passed_color}"
 
-  #convert that to a hex value, doesn't work with values over 99 :( 
+  #convert that to a hex value
   colorcode = passed_color.to_s(16)
-  puts "colorcode is #{colorcode}"
-  puts "I am sending '\x20#{colorcode}\x55'"
+  puts "hex color code is #{colorcode}"
+  #puts "I am sending '\x20#{colorcode}\x55'"
   
   #send the value
-  set_color = "\x20#{colorcode}\x55" #going to need to sort out how to convert integers passed to hex + how the heck are these tabulated?
+  set_color = "\x20#{colorcode}\x55"
   socket = UDPSocket.new
   socket.send(set_color, 0, wifi_bridge_ip, wifi_bridge_port)
   
-else puts "usage: ruby limitlessled-rgb.rb [on | off | bright| dim | faster | slower | color (hex value)]"
+else puts "usage: ruby limitlessled-rgb.rb [on | off | bright| dim | modeup | modedown | faster | slower | color (1-255)]"
 end
