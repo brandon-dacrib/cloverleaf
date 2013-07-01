@@ -1,3 +1,4 @@
+#!/usr/bin/ruby
 require 'socket'
 
 # master list of commands here: http://www.limitlessled.com/dev/
@@ -66,6 +67,12 @@ when "faster"
 when "slower"
   socket = UDPSocket.new
   socket.send(speed_down, 0, wifi_bridge_ip, wifi_bridge_port)
+
+when "white"
+  for i in 0..19
+    socket = UDPSocket.new
+    socket.send(mode_down, 0, wifi_bridge_ip, wifi_bridge_port
+  end
   
 when "color"
   #set color argument to be an integer
