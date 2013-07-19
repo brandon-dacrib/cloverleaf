@@ -8,7 +8,7 @@ require 'uri'
 
 get '/say/:utterance' do
   utter = URI.decode("#{params[:utterance]}")
-	system("#{Dir.pwd}/helpers/say.rb /'#{utter}/'")
+	system("helpers/say.rb /'#{utter}/'")
 	@output = 'OK'
 	"#{@output}"
 end
