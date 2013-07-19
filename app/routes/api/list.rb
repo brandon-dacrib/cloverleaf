@@ -25,6 +25,7 @@ end
 DataMapper.finalize
 
 get '/list' do
-  @devices = Device.all
-  puts @devices
+	@devices = Device.all
+	puts @devices
+	output = @devices
 end
