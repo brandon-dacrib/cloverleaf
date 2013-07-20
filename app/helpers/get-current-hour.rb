@@ -1,3 +1,4 @@
+#!/usr/bin/ruby
 currenthour = Time.now.strftime("%-l%p")
 cwd = Dir.pwd
 
