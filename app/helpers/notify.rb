@@ -11,13 +11,7 @@ when "sms"
   #sms
   
 when "say"
-  #say
-  
-when "light"
-  # do something with a light or lights
-  
-when "rgb"
-  #do something with the rgb lights
+  #basically say with addressing vs broadcast to all
   
 else
   puts "usage: notify.rb [method] [address] [message] \n" 
