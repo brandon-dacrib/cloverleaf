@@ -2,6 +2,10 @@
 
 case ARGV[0]
 when "email"      #email something
+  require 'pony'
+  address = ARGV[1]
+  message = ARGV[2]
+  Pony.mail(:to => '#{address}', :from => 'brandon@dacrib.net', :subject => 'cloverleaf says:', :body => '#{message}')
   
 when "growl"      #growl notifications
   hostname = ARGV[1]
