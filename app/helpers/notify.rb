@@ -7,7 +7,7 @@ when "email"
 when "growl" #growl notifications
   hostname = ARGV[1]
   message  = ARGV[2]
-  system("growl -n "cloverleaf says" -H #{hostname} -m #{message}")
+  system("growl -n 'cloverleaf says:' -H #{hostname} -m '#{message}'")
   
 when "say"
   #basically say with addressing vs broadcast to all
