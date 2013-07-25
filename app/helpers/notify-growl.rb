@@ -1,1 +1,0 @@
-#don't use this, just use the growl command that comes with the ruby-growl gem
