@@ -4,8 +4,8 @@ case ARGV[0]
 when "email"      #email something
   require 'parseconfig'
   require 'pony'
-  config = ParseConfig.new('config/cloverleaf.conf')
-  puts config.get_value('from_email')
+  conf = ParseConfig.new('config/cloverleaf.conf')
+  puts conf.get_value['from_email']
   address = ARGV[1]
   message = ARGV[2]
   Pony.mail(:to => address, :from => from_email, :subject => 'cloverleaf says:', :body => message)
