@@ -5,7 +5,7 @@ when "email"      #email something
   require 'parseconfig'
   require 'pony'
   conf = ParseConfig.new('config/cloverleaf.conf')
-  puts conf.get_value['from_email']
+  from_email = conf['from_email']
   address = ARGV[1]
   message = ARGV[2]
   Pony.mail(:to => address, :from => from_email, :subject => 'cloverleaf says:', :body => message)
