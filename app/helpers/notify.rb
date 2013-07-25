@@ -12,7 +12,7 @@ when "say"      #basically say with addressing vs broadcast to all
   
 when "sms"      #sms
   
-when "twitter"  #tweet something 
+when "twitter"  #tweet something
   
 when "all"      #broadcast something really important
   
