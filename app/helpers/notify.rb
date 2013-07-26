@@ -23,7 +23,7 @@ when "sms"      #sms
   require 'googlevoiceapi'
   
   to_number = ARGV[1]
-  message   = ARGV[0]
+  message   = ARGV[2]
   
   conf = ParseConfig.new('config/cloverleaf.conf')
   google_voice_user = conf['google_voice_user']
