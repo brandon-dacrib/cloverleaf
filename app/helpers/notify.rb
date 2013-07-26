@@ -6,6 +6,7 @@ when "email"      #email something
   require 'pony'
   conf = ParseConfig.new('config/cloverleaf.conf')
   from_email = conf['from_email']
+  
   address = ARGV[1]
   message = ARGV[2]
   Pony.mail(:to => address, :from => from_email, :subject => 'cloverleaf says:', :body => message)
@@ -18,6 +19,18 @@ when "growl"      #growl notifications
 when "say"      #basically say with addressing vs broadcast to all
   
 when "sms"      #sms
+  require 'parseconfig'
+  require 'googlevoiceapi'
+  
+  to_number = ARGV[1]
+  message   = ARGV[0]
+  
+  conf = ParseConfig.new('config/cloverleaf.conf')
+  google_voice_user = conf['google_voice_user']
+  google_voice_pass = conf['google_voice_pass']
+  
+  api = GoogleVoice::Api.new(google_voice_user, google_voice_pass)
+  api.sms(to_number, message)
   
 when "twitter"  #tweet something
   
