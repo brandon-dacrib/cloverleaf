@@ -21,5 +21,8 @@ every :weekday, :at => '8:59pm' do
 end
 
 every '0 08-12/2 * * *' do
-  command "#{cwd}/helpers/notify.rb sms 16462505219 'Reminder: drink some water'"
+  require 'parseconfig'
+  conf = ParseConfig.new('config/cloverleaf.conf')
+  dawn_mobile = conf['dawn_mobile']
+  command "#{cwd}/helpers/notify.rb sms #{dawn_mobile} 'Reminder: drink some water'"
 end
