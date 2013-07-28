@@ -19,3 +19,7 @@ end
 every :weekday, :at => '8:59pm' do
   command "#{cwd}/helpers/say.rb 'Gabriel it is time to go to bed' "
 end
+
+every '0 08-12/2 * * *' do
+  command "#{cwd}/helpers/notify.rb sms 16462505219 'Reminder: drink some water'"
+end
