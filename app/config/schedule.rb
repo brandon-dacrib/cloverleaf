@@ -22,7 +22,7 @@ end
 
 every '0 08-12/2 * * *' do
   require 'parseconfig'
-  conf = ParseConfig.new('config/cloverleaf.conf')
+  conf = ParseConfig.new("#{cwd}/config/cloverleaf.conf")
   dawn_mobile = conf['dawn_mobile']
   command "#{cwd}/helpers/notify.rb sms #{dawn_mobile} 'Reminder: drink some water'"
 end
