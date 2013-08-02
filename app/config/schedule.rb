@@ -1,7 +1,9 @@
 # Use this file to easily define all of your cron jobs.
 cwd = Dir.pwd
+currenthour = Time.now.strftime("%-l%p")
+
 every '00 08-22 * * *' do
-	command "#{cwd}/helpers/get-current-hour.rb"
+	command "#{cwd}/helpers/get-current-hour.rb &> /dev/null"
 end
 
 every :weekday, :at => '7:30pm' do
