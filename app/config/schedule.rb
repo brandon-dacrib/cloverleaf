@@ -22,7 +22,7 @@ every :weekday, :at => '8:59pm' do
   command "#{cwd}/helpers/say.rb 'Gabriel it is time to go to bed' "
 end
 
-every '0 08-12/2 * * *' do
+every '0 10-12/2 * * *' do
   require 'parseconfig'
   conf = ParseConfig.new("#{cwd}/config/cloverleaf.conf")
   dawn_mobile = conf['dawn_mobile']
