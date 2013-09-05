@@ -5,14 +5,12 @@ require 'json'
 
 class Forecast
   include HTTParty
-  format :json
-  
+
   def self.getcurrent
-    get('http://api.openweathermap.org/data/2.5/weather?lat=40&lon=-73&units=imperial', :output => 'json')
+    get('http://api.openweathermap.org/data/2.5/weather?lat=40&lon=-74&units=imperial')
   end
 end
 
 parsed = JSON.parse Forecast.getcurrent.body
 #puts parsed
-puts parsed["weather"]
-puts parsed["main"]
+puts parsed["weather"],parsed["main"]
