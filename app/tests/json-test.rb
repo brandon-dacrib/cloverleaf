@@ -1,7 +1,7 @@
 require 'rubygems'
 require 'httparty'
 require 'json'
-require 'pp'
+
 
 class Forecast
   include HTTParty
@@ -12,4 +12,7 @@ class Forecast
   end
 end
 
-pp puts JSON.parse Forecast.getcurrent.body
+parsed = JSON.parse Forecast.getcurrent.body
+#puts parsed
+puts parsed["weather"]
+puts parsed["main"]
