@@ -10,15 +10,15 @@ every :weekday, :at => '7:30pm' do
 	command "#{cwd}/helpers/say.rb 'Gabriel get in the shower' "
 end
 
-every :weekday, :at => '8:30pm' do
-	command "#{cwd}/helpers/say.rb 'Gabriel it is time to read' "
-end
-
-every :weekday, :at => '8:55pm' do
+every :weekday, :at => '7:55pm' do
   command "#{cwd}/helpers/say.rb 'Gabriel make sure you have brushed your teeth, and taken your medicine' "
 end
 
-every :weekday, :at => '8:59pm' do
+every :weekday, :at => '7:59pm' do
+	command "#{cwd}/helpers/say.rb 'Gabriel it is time to read' "
+end
+
+every :weekday, :at => '8:30pm' do
   command "#{cwd}/helpers/say.rb 'Gabriel it is time to go to bed' "
 end
 
