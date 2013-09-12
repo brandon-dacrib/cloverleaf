@@ -39,8 +39,19 @@ when "forecast"
 	two_night_fctext = parsed_json['forecast']['txt_forecast']['forecastday'][5]['fcttext']
 	two_days_title = parsed_json['forecast']['txt_forecast']['forecastday'][4]['title']
 
-	puts "todays forecast: #{today_fctext}\ntomorrows forecast: #{tomorrow_day_fctext}\nforecast for #{two_days_title}: #{two_days_fctext}\n"
+	case ARGV[1]
+	when "today"
+		puts "todays forecast: #{today_fctext}\n"
 
+	when "tonight"
+		puts "tonight: #{tonight_fctext}\n"
+
+	when "tomorrow"
+		puts "tomorrows weather: #{tomorrow_day_fctext}, tomorrow night: #{tomorrow_night_fctext}"
+
+	when "2day"
+		puts "forecast for #{two_days_title}: #{two_days_fctext}\n"
+end
 else
 	puts "usage: wunderground.rb [method]\n" 
 	puts "example: wunderground.rb current\n"
