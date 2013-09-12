@@ -11,9 +11,10 @@ zip = conf['wunderground_zip']
 case ARGV[0]
 
 when "current"      #get current weather
-	url = "http://api.wunderground.com/api/#{api_key}/geolookup/conditions/q/#{zip}.json"
+	url = "http://api.wunderground.com/api/#{api_key}/geolookup/conditions/q/#{zip}.json" #pull the geolookup out at some point
 	res = RestClient.get url
 	parsed_json = JSON.parse(res)
+	
 	location = parsed_json['location']['city']
 	weather = parsed_json['current_observation']['weather']
 	temp_f = parsed_json['current_observation']['temp_f']
@@ -23,11 +24,22 @@ when "current"      #get current weather
 	puts "current weather: #{weather}, temperature is #{temp_f} degrees, relative_humidity is #{relative_humidity}, and it feels like it is #{feelslike_f} degrees.\n"
 
 when "forecast"
-	url = "http://api.wunderground.com/api/#{api_key}/geolookup/forecast/q/#{zip}.json"
+	url = "http://api.wunderground.com/api/#{api_key}/forecast/q/#{zip}.json"
 	res = RestClient.get url
 	parsed_json = JSON.parse(res)
 	#ap parsed_json
-	puts parsed_json[0]
+
+	today_fctext = parsed_json['forecast']['txt_forecast']['forecastday'][0]['fcttext']
+	tonight_fctext = parsed_json['forecast']['txt_forecast']['forecastday'][1]['fcttext']
+
+	tomorrow_day_fctext = parsed_json['forecast']['txt_forecast']['forecastday'][2]['fcttext']
+	tomorrow_night_fctext = parsed_json['forecast']['txt_forecast']['forecastday'][3]['fcttext']
+
+	two_days_fctext = parsed_json['forecast']['txt_forecast']['forecastday'][4]['fcttext']
+	two_night_fctext = parsed_json['forecast']['txt_forecast']['forecastday'][5]['fcttext']
+	two_days_title = parsed_json['forecast']['txt_forecast']['forecastday'][4]['title']
+
+	puts "todays forecast: #{today_fctext}\n tomorrows forecast: #{tomorrow_day_fctext}\n forecast for #{two_days_title}: #{two_days_fctext}\n"
 
 else
 	puts "usage: wunderground.rb [method]\n" 
