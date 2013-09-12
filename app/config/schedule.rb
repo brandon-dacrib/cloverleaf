@@ -2,7 +2,11 @@
 cwd = Dir.pwd
 currenthour = Time.now.strftime("%-l%p")
 
-every '00 08-22 * * *' do
+every '00 08-22 * * 1-5' do
+	command "#{cwd}/helpers/get-current-hour.rb &> /dev/null"
+end
+
+every '00 10-22 * * 0,6' do
 	command "#{cwd}/helpers/get-current-hour.rb &> /dev/null"
 end
 
@@ -22,7 +26,7 @@ every :weekday, :at => '8:30pm' do
   command "#{cwd}/helpers/say.rb 'Gabriel it is time to go to bed' "
 end
 
-every '0 10-12/2 * * *' do
+every '0 12 * * 1-5' do
   require 'parseconfig'
   conf = ParseConfig.new("#{cwd}/config/cloverleaf.conf")
   dawn_mobile = conf['dawn_mobile']

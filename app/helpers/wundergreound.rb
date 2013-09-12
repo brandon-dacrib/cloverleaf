@@ -19,7 +19,7 @@ when "current"      #get current weather
   relative_humidity = parsed_json['current_observation']['relative_humidity']
   feelslike_f = parsed_json['current_observation']['feelslike_f']
 
-  print "current weather: #{weather}, temperature is #{temp_f} degrees, relative_humidity is #{relative_humidity}, and it feels like it is #{feelslike_f} degrees\n"
+  print "current weather: #{weather}, temperature is #{temp_f} degrees, relative_humidity is #{relative_humidity}, and it feels like it is #{feelslike_f} degrees.\n"
 
 else
 	puts "usage: wunderground.rb [method]\n" 
