@@ -21,7 +21,7 @@ when "current"      #get current weather
 	relative_humidity = parsed_json['current_observation']['relative_humidity']
 	feelslike_f = parsed_json['current_observation']['feelslike_f']
 
-	puts "current weather: #{weather}, temperature is #{temp_f} degrees, relative_humidity is #{relative_humidity}, and it feels like it is #{feelslike_f} degrees.\n"
+	puts "current weather for #{location}: #{weather}, temperature is #{temp_f} degrees, relative_humidity is #{relative_humidity}, and it feels like it is #{feelslike_f} degrees.\n"
 
 when "forecast"
 	url = "http://api.wunderground.com/api/#{api_key}/forecast/q/#{zip}.json"
