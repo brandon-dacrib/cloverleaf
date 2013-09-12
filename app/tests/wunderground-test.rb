@@ -2,6 +2,8 @@ require 'rest-client'
 require 'json'
  
 url = "http://api.wunderground.com/api/#{api_key}/geolookup/conditions/q/10044.json"
+
+url = "http://api.wunderground.com/api/#{api_key}/geolookup/conditions/q/#{wunderground_zip}.json"
  
 res = RestClient.get url
 parsed_json = JSON.parse(res)
