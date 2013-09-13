@@ -46,10 +46,10 @@ when "forecast"
 	when "tonight"
 		puts "tonight: #{tonight_fctext}\n"
 
-	when "tomorrow"
+	when "1"
 		puts "tomorrows weather: #{tomorrow_day_fctext}, tomorrow night: #{tomorrow_night_fctext}"
 
-	when "2day"
+	when "2"
 		puts "forecast for #{two_days_title}: #{two_days_fctext}\n"
 end
 else
