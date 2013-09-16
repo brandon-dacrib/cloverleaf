@@ -11,7 +11,7 @@ zip = conf['wunderground_zip']
 case ARGV[0]
 
 when "current"      #get current weather
-	url = "http://api.wunderground.com/api/#{api_key}/geolookup/conditions/q/#{zip}.json" #pull the geolookup out at some point
+	url = "http://api.wunderground.com/api/#{api_key}/geolookup/conditions/q/#{zip}.json"
 	res = RestClient.get url
 	parsed_json = JSON.parse(res)
 	
@@ -23,7 +23,7 @@ when "current"      #get current weather
 
 	puts "current weather for #{location}: #{weather}, temperature is #{temp_f} degrees, relative_humidity is #{relative_humidity}, and it feels like it is #{feelslike_f} degrees.\n"
 
-when "forecast"
+when "forecast" #get forecast with time arguments below
 	url = "http://api.wunderground.com/api/#{api_key}/forecast/q/#{zip}.json"
 	res = RestClient.get url
 	parsed_json = JSON.parse(res)
