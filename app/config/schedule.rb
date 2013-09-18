@@ -26,7 +26,7 @@ every :weekday, :at => '8:30pm' do
   command "#{cwd}/helpers/say.rb 'Gabriel it is time to go to bed' "
 end
 
-every :weekday :at => '8:15am' do
+every :weekday, :at => '8:15am' do
 	command "#{cwd}/helpers/say.rb 'Gabriel take your q var' "
 end
 
