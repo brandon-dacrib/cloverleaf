@@ -10,4 +10,5 @@ cal = Google::Calendar.new(:username => username,
                            :password => password,
                            :app_name => 'cloverleaf-googlecalendar-integration')
 
-puts cal.find_events('Housework')
+puts cal.events
+#puts cal.find_events('Housework')
