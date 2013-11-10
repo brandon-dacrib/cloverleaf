@@ -4,3 +4,5 @@ insteon.yml
 cloverleaf.conf
 GeoIP.dat
 *.lock
+
+app/bundle/Gemfile.lock
