@@ -3,3 +3,4 @@ insteon.yml
 *.bak
 cloverleaf.conf
 GeoIP.dat
+*.lock
