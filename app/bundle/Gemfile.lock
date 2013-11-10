@@ -83,7 +83,6 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
-    map (6.3.0)
     mechanize (2.7.1)
       domain_name (~> 0.5, >= 0.5.1)
       http-cookie (~> 1.0.0)
@@ -111,6 +110,8 @@ GEM
     rack-protection (1.5.0)
       rack
     require_all (1.2.1)
+    rest-client (1.6.7)
+      mime-types (>= 1.16)
     ruby-growl (4.0)
       uuid (~> 2.3, >= 2.3.5)
     sinatra (1.4.3)
@@ -137,9 +138,6 @@ GEM
     uuid (2.3.7)
       macaddr (~> 1.0)
     uuidtools (2.1.4)
-    weather-api (1.1.0)
-      chronic (~> 0.9.1)
-      map (~> 6.3.0)
     webrobots (0.1.1)
     whenever (0.8.3)
       activesupport (>= 2.3.4)
@@ -154,12 +152,13 @@ DEPENDENCIES
   googlevoiceapi
   haml
   httparty
+  json
   parseconfig
   pony
   require_all
+  rest-client
   ruby-growl
   sinatra
   sqlite3
   thin
-  weather-api
   whenever
