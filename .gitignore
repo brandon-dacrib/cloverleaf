@@ -6,3 +6,5 @@ GeoIP.dat
 *.lock
 
 app/bundle/Gemfile.lock
+
+app/bundle/Gemfile.lock
