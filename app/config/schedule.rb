@@ -36,10 +36,3 @@ every '0 12 * * 1-5' do
   dawn_mobile = conf['dawn_mobile']
   command "cd #{cwd}; #{cwd}/helpers/notify.rb sms #{dawn_mobile} 'Reminder: drink some water'"
 end
-<<<<<<< HEAD
-
-every :weekday, :at => '8:15am' do
-  command "cd #{cwd}/helpers/; ./say-weather.rb say"
-end
-=======
->>>>>>> parent of deace17... added bits to say weather every morning
