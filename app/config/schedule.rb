@@ -26,7 +26,7 @@ every :weekday, :at => '8:30pm' do
   command "#{cwd}/helpers/say.rb 'Gabriel it is time to go to bed' "
 end
 
-every :weekday, :at => '8:14am' do
+every :weekday, :at => '8:15am' do
 	command "#{cwd}/helpers/say.rb 'Gabriel take your q var' "
 end
 
@@ -36,7 +36,10 @@ every '0 12 * * 1-5' do
   dawn_mobile = conf['dawn_mobile']
   command "cd #{cwd}; #{cwd}/helpers/notify.rb sms #{dawn_mobile} 'Reminder: drink some water'"
 end
+<<<<<<< HEAD
 
 every :weekday, :at => '8:15am' do
   command "cd #{cwd}/helpers/; ./say-weather.rb say"
 end
+=======
+>>>>>>> parent of deace17... added bits to say weather every morning
