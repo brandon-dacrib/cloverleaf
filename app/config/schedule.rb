@@ -38,5 +38,5 @@ every '0 12 * * 1-5' do
 end
 
 every :weekday, :at => '8:15am' do
-  command "#{cwd}/helpers/say-weather.rb say"
+  command "cd #{cwd}/helpers/; ./say-weather.rb say"
 end
