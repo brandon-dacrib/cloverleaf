@@ -15,7 +15,7 @@ every :weekday, :at => '7:30pm' do
 end
 
 every :weekday, :at => '7:55pm' do
-  command "#{cwd}/helpers/say.rb 'Gabriel make sure you have brushed your teeth, and taken your medicine' "
+  command "#{cwd}/helpers/say.rb 'Gabriel make sure you have taken your medicine, and brushed your teeth' "
 end
 
 every :weekday, :at => '7:59pm' do
