@@ -36,3 +36,15 @@ every '0 12 * * 1-5' do
   dawn_mobile = conf['dawn_mobile']
   command "cd #{cwd}; #{cwd}/helpers/notify.rb sms #{dawn_mobile} 'Reminder: drink some water'"
 end
+
+every '59 09,11 * * *' do
+  command "{cwd}/helpers/wunderground.rb current"
+end
+
+every :weekday :at => '7:59am' do
+  command "{cwd}/helpers/wunderground.rb forecast today"
+end
+
+every :day :at => '7:59pm' do
+  command "{cwd}/helpers/wunderground.rb forecast 1"
+end
