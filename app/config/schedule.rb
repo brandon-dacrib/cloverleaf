@@ -41,10 +41,10 @@ every '59 09,11 * * *' do
   command "{cwd}/helpers/wunderground.rb current"
 end
 
-every :weekday :at => '7:59am' do
+every :weekday, :at => '7:59am' do
   command "{cwd}/helpers/wunderground.rb forecast today"
 end
 
-every :day :at => '7:59pm' do
+every :day, :at => '7:59pm' do
   command "{cwd}/helpers/wunderground.rb forecast 1"
 end
