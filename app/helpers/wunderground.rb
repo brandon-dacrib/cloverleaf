@@ -54,16 +54,16 @@ when "forecast" #get forecast with time arguments below
 
 	case ARGV[1]
 	when "today"
-		"todays forecast: #{today_fctext}\n".to_speech
+		"\"todays forecast: #{today_fctext}\""
 
 	when "tonight"
-		"tonight: #{tonight_fctext}\n".to_speech
+		"\"tonight: #{tonight_fctext}\""
 
 	when "1"
-		"tomorrows weather: #{tomorrow_day_fctext}, tomorrow night: #{tomorrow_night_fctext}".to_speech
+		"\"tomorrows weather: #{tomorrow_day_fctext}, tomorrow night: #{tomorrow_night_fctext}\""
 
 	when "2"
-		"forecast for #{two_days_title}: #{two_days_fctext}\n".to_speech
+		"\"forecast for #{two_days_title}: #{two_days_fctext}\""
 end
 else
 	puts "usage: wunderground.rb [method]\n" 

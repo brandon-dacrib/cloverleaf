@@ -38,13 +38,13 @@ every '0 12 * * 1-5' do
 end
 
 every '59 09,11 * * *' do
-  command "#{cwd}/helpers/wunderground.rb current"
+  command "#{cwd}/helpers/wunderground.rb current | xargs #{cwd}/helpers/say.rb"
 end
 
 every :weekday, :at => '7:59am' do
-  command "#{cwd}/helpers/wunderground.rb forecast today"
+  command "#{cwd}/helpers/wunderground.rb forecast today | xargs #{cwd}/helpers/say.rb"
 end
 
 every :day, :at => '7:30pm' do
-  command "#{cwd}/helpers/wunderground.rb forecast 1"
+  command "#{cwd}/helpers/wunderground.rb forecast 1 | xargs #{cwd}/helpers/say.rb"
 end
