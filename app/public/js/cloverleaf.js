@@ -50,7 +50,7 @@ var LEAF = window.LEAF = $.extend(window.LEAF||{}, {
 
 // Debug logger
 function log(msg, error) {
-  if (FLO.debug || error) {
+  if (LEAF.debug || error) {
     console.log(msg);
   }
 }
