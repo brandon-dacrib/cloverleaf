@@ -1,6 +1,7 @@
 #!/usr/bin/ruby
 require 'rubygems'
 require 'tts'
+Tts.server_url  "http://tts-api.com/tts.mp3"
 
 input = ARGV
 #	puts "#{input}"

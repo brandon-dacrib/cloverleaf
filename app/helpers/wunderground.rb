@@ -3,7 +3,6 @@ require 'rest-client'
 require 'json'
 require 'parseconfig'
 require 'awesome_print'
-require 'festivaltts4r'
   
 conf = ParseConfig.new('config/cloverleaf.conf')
 api_key = conf['wunderground_api_key']
@@ -22,7 +21,7 @@ when "current"      #get current weather
 	relative_humidity = parsed_json['current_observation']['relative_humidity']
 	feelslike_f = parsed_json['current_observation']['feelslike_f']
 
-	"current weather for #{location}: #{weather}, temperature is #{temp_f} degrees, relative humidity is #{relative_humidity}, and it feels like it is #{feelslike_f} degrees.\n".to_speech
+	puts "\"current weather for #{location}: #{weather}, temperature is #{temp_f} degrees, relative humidity is #{relative_humidity}, and it feels like it is #{feelslike_f} degrees.\""
   
 when "say"
 	url = "http://api.wunderground.com/api/#{api_key}/geolookup/conditions/q/#{zip}.json"
@@ -35,7 +34,7 @@ when "say"
 	relative_humidity = parsed_json['current_observation']['relative_humidity']
 	feelslike_f = parsed_json['current_observation']['feelslike_f']
 
-	puts "current weather: #{weather}, #{temp_f} degrees\n"
+	puts "\"current weather: #{weather}, #{temp_f} degrees\""
   
 when "forecast" #get forecast with time arguments below
 	url = "http://api.wunderground.com/api/#{api_key}/forecast/q/#{zip}.json"
