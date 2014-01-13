@@ -8,29 +8,29 @@ class ISY
   basic_auth 'admin', 'admin'
 end
 
-get '/do/:nodeid/1' do
+get '/api/do/:nodeid/1/*' do
   node = URI.encode("#{params[:nodeid]}")
-  response = ISY.get("/rest/nodes/#{node}/cmd/DON")
+  response = ISY.get("/rest/nodes/#{node}/cmd/api/doN")
   puts response.code, response.body, response.message, response.headers.inspect
   @output = response.message
   "#{@output}"
 end
 
-get '/do/:nodeid/0' do
+get '/api/do/:nodeid/0/*' do
   node = URI.encode("#{params[:nodeid]}")
-  response = ISY.get("/rest/nodes/#{node}/cmd/DOF")
+  response = ISY.get("/rest/nodes/#{node}/cmd/api/doF")
   puts response.code, response.body, response.message, response.headers.inspect
   @output = response.message
   "#{@output}"
 end
 
-get '/do/limitlessledrgb/:state' do
+get '/api/do/limitlessledrgb/:state' do
   system("helpers/limitlessled-rgb.rb #{params[:state]}")
   @output = 'OK'
   "#{@output}"
 end
 
-get '/do/limitlessledrgb/color/:color' do
+get '/api/do/limitlessledrgb/color/:color' do
   system("helpers/limitlessled-rgb.rb color #{params[:color]}")
   @output = 'OK'
   "#{@output}"
