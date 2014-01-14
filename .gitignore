@@ -4,7 +4,8 @@ insteon.yml
 cloverleaf.conf
 GeoIP.dat
 *.lock
-
+.floo
+.flooignore
 app/bundle/Gemfile.lock
 
 app/bundle/Gemfile.lock
