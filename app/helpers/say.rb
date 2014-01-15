@@ -1,8 +1,7 @@
 #!/usr/bin/ruby
 require 'rubygems'
-require_relative '../lib/google_tts'
-#require 'tts'
-#Tts.server_url  "http://tts-api.com/tts.mp3"
+require 'tts'
+Tts.server_url  "http://app0:8080/api/say/"
 
 input = ARGV
 #	puts "#{input}"
