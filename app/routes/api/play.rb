@@ -5,7 +5,7 @@ require 'uri'
 
 get '/play/:sound' do
   sound = URI.decode("#{params[:sound]}")
-	system("helpers/play.rb #{sound}")
+	system("modules/play.rb #{sound}")
 	@output = 'OK'
 	"#{@output}"
 end

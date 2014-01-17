@@ -33,13 +33,13 @@ get '/api/do/:nodeid/2/*' do
 end
 
 get '/api/do/limitlessledrgb/:state' do
-  system("helpers/limitlessled-rgb.rb #{params[:state]}")
+  system("modules/limitlessled-rgb.rb #{params[:state]}")
   @output = 'OK'
   "#{@output}"
 end
 
 get '/api/do/limitlessledrgb/color/:color' do
-  system("helpers/limitlessled-rgb.rb color #{params[:color]}")
+  system("modules/limitlessled-rgb.rb color #{params[:color]}")
   @output = 'OK'
   "#{@output}"
 end
