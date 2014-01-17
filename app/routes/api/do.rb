@@ -8,17 +8,25 @@ class ISY
   basic_auth 'admin', 'admin'
 end
 
-get '/api/do/:nodeid/1/*' do
+get '/api/do/:nodeid/0/*' do
   node = URI.encode("#{params[:nodeid]}")
-  response = ISY.get("/rest/nodes/#{node}/cmd/api/doN")
+  response = ISY.get("/rest/nodes/#{node}/cmd/DFOF")
   puts response.code, response.body, response.message, response.headers.inspect
   @output = response.message
   "#{@output}"
 end
 
-get '/api/do/:nodeid/0/*' do
+get '/api/do/:nodeid/1/*' do
   node = URI.encode("#{params[:nodeid]}")
-  response = ISY.get("/rest/nodes/#{node}/cmd/api/doF")
+  response = ISY.get("/rest/nodes/#{node}/cmd/DFON")
+  puts response.code, response.body, response.message, response.headers.inspect
+  @output = response.message
+  "#{@output}"
+end
+
+get '/api/do/:nodeid/2/*' do
+  node = URI.encode("#{params[:nodeid]}")
+  response = ISY.get("/rest/nodes/#{node}/cmd/DIM/50")
   puts response.code, response.body, response.message, response.headers.inspect
   @output = response.message
   "#{@output}"
