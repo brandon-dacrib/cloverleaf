@@ -3,6 +3,7 @@ require 'rubygems'
 require 'sinatra'
 
 get ('/') { erb :index}
+get ('/blinds') { erb :blinds}
 get ('/lights') { erb :lights}
 get ('/sensors') {erb :sensors}
-get ('/other') { erb :other}
+get ('/settings') { erb :settings}
