@@ -7,10 +7,10 @@ require 'haml'
 #require 'dm-sqlite-adapter'
 
 #DataMapper.setup(:default, 'sqlite://db/my_way_development')
-dbpath = "sqlite://#{Dir.pwd}/db/sample.db"
+dbpath = "sqlite://#{Dir.pwd}/data/sqlite/sample.db"
 puts dbpath
 
-DataMapper.setup(:default, "sqlite://#{Dir.pwd}/db/sample.db")
+DataMapper.setup(:default, "sqlite://#{Dir.pwd}/data/sqlite/sample.db")
 
 class Device
   include DataMapper::Resource

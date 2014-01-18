@@ -26,7 +26,7 @@ end
 
 get '/api/do/:nodeid/2/*' do
   node = URI.encode("#{params[:nodeid]}")
-  response = ISY.get("/rest/nodes/#{node}/cmd/DIM/50")
+  response = ISY.get("/rest/nodes/#{node}/cmd/DFON/128")
   puts response.code, response.body, response.message, response.headers.inspect
   @output = response.message
   "#{@output}"
