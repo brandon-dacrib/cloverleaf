@@ -1,11 +1,18 @@
 #insteon devices attached to an ISY99 have a resful API documented here: #http://wiki.universal-devices.com/index.php?title=ISY-99i_Series_INSTEON:REST_Interface
 #for those we really just need to translate the URL, samples below
 require 'uri'
+require 'parseconfig'
 
 class ISY
   include HTTParty
-  base_uri '192.168.1.204'
-  basic_auth 'admin', 'admin'
+  conf = ParseConfig.new('config/cloverleaf.conf')
+    @isy_uri = conf['isy_uri']
+    @isy_user = conf['isy_user']
+    @isy_pass = conf['isy_pass']
+
+  # Create bits for httparty
+    base_uri "#{@isy_uri}"
+    basic_auth "#{@isy_user}", "#{@isy_pass}"
 end
 
 get '/api/do/:nodeid/0/*' do
