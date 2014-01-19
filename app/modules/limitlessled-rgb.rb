@@ -1,5 +1,10 @@
 #!/usr/bin/ruby
 require 'socket'
+require 'parseconfig'
+
+conf = ParseConfig.new('config/cloverleaf.conf')
+wifi_bridge_ip = conf['limitlessled-rgb-wifi_bridge_ip']
+wifi_bridge_port = conf['limitlessled-rgb-wifi_bridge_port']
 
 # master list of commands here: http://www.limitlessled.com/dev/
 # LimitlessLED RGB
@@ -13,9 +18,9 @@ require 'socket'
 # 26 00 55 – Speed Down (Slow)
 # 20 xx 55 – Set Colour to xx
 
-#define limitlessled wifi bridge
-wifi_bridge_ip = '192.168.1.205'
-wifi_bridge_port = 50000
+#define limitlessled wifi bridge ## uncomment this if you are running this standalone ##
+#wifi_bridge_ip = '192.168.1.205'
+#wifi_bridge_port = 50000
 
 #define lamp states
 lamp_on = "\x22\x00\x55"
