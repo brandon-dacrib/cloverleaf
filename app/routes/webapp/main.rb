@@ -53,5 +53,5 @@ get ('/settings') { erb :settings}
 
 get '/test' do
   @routers = Router.all
-  slim :test
+  erb :test
 end

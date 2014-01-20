@@ -1,18 +1,52 @@
+<!DOCTYPE html>
 <html>
-    <script src="http://code.jquery.com/jquery.js"></script>
-    <script src="/bootstrap/js/bootstrap.min.js"></script>
-    <script src="/js/test.js"></script>
+  <head>
+    <title>Cloverleaf Dashboard</title>
+    <!-- Bootstrap -->
 	<link href="/bootstrap/css/bootstrap.css" rel="stylesheet">
 	<link href="/css/lights.css" rel="stylesheet">
-<div class="btn-group">
-  <button type="button" class="btn btn-warning btn-large dropdown-toggle " data-toggle="dropdown">
-    Dim <span class="caret"></span>
-  </button>
-  <ul class="dropdown-menu" role="menu">
-    <li><a id="alertMe" href="#">Action</a></li>
-    <li><a href="#">50%</a></li>
-	<li><a href="#">75%</a></li>
-	<li><a href="#">100%</a></li>
-  </ul>
-</div>
-</html>
+  </head>
+  <body>
+	  <div class="navbar">
+	    <div class="navbar-inner">
+	      <a class="brand" href="#">Cloverleaf Dashboard</a>
+	      <ul class="nav">
+			  <li class="divider-vertical"></li>
+	        <li class="active"><a href="lights">Lights</a></li>
+			<li class="divider-vertical"></li>
+	        <li><a href="sensors">Sensors</a></li>
+			<li class="divider-vertical"></li>
+	        <li><a href="blinds">Blinds</a></li>
+			<li class="divider-vertical"></li>
+			<li><a href="settings">Settings</a></li>
+			<li class="divider-vertical"></li>
+	      </ul>
+	    </div>
+	  </div>
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="/bootstrap/js/bootstrap.min.js"></script>
+    	<h2>My Routers</h2>
+    		<table class="table table-striped dashboard">
+					<thead>
+						<tr>
+							<th><h4>ID</h4></th>
+							<th><h4>Address</h4></th>
+							<th><h4>Description</h4></th>
+						</tr>
+					</thead>
+    <tbody>
+    	<ul class="routers"> <% @routers.each do |router| %>
+			<tr>
+				<td>
+					<%= ::Temple::Utils.escape_html((router.router_id)) %>
+				</td>
+				<td>
+					<%= ::Temple::Utils.escape_html((router.router_address)) %>
+				</td>
+				<td>
+					<%= ::Temple::Utils.escape_html((router.router_desc)) %>
+				</td>
+			</tr>
+		<% end %>
+		</ul>
+	</tbody>
