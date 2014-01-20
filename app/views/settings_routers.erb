@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cloverleaf Dashboard</title>
+    <!-- Bootstrap -->
+	<link href="/bootstrap/css/bootstrap.css" rel="stylesheet">
+	<link href="/css/lights.css" rel="stylesheet">
+  </head>
+  <body>
+	  <div class="navbar navbar-static-top">
+	    <div class="navbar-inner">
+	      <a class="brand" href="#">Cloverleaf Dashboard</a>
+	      <ul class="nav">
+			  <li class="divider-vertical"></li>
+	        <li><a href="lights">Lights</a></li>
+			<li class="divider-vertical"></li>
+	        <li><a href="sensors">Sensors</a></li>
+			<li class="divider-vertical"></li>
+	        <li><a href="blinds">Blinds</a></li>
+			<li class="divider-vertical"></li>
+			<li class="active"><a href="/settings">Settings</a></li>
+			<li class="divider-vertical"></li>
+	      </ul>
+	    </div>
+	  </div>
+<div class="navbar navbar-inverse">
+  <div class="navbar-inner">
+    <ul class="nav">
+      <li><a href="/settings/attributes">Attributes</a></li>
+      <li><a href="/settings/devices">Devices</a></li>
+	  <li class="active"><a href="/settings/routers">Routers</a></li>
+    </ul>
+  </div>
+</div>
+
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="/bootstrap/js/bootstrap.min.js"></script>
+    	<h2>Routers</h2>
+    		<table class="table table-striped dashboard">
+
+<thead>
+	<tr>
+		<th><h4>ID</h4></th>
+		<th><h4>Description</h4></th>
+		<th><h4>Address</h4></th>
+	</tr>
+</thead>
+
+<tbody>
+	<ul class="router"> <% @routers.each do |router| %>
+		<tr>
+			<td>
+				<%= ::Temple::Utils.escape_html((router.router_id)) %>
+			</td>
+			<td>
+				<%= ::Temple::Utils.escape_html((router.router_desc)) %>
+			</td>
+			<td>
+				<%= ::Temple::Utils.escape_html((router.router_address)) %>
+			</td>
+		<% end %>
+	</ul>
+</tbody>
