@@ -75,6 +75,20 @@ get '/settings' do
   erb :settings
 end
 
+get '/settings/attributes' do
+  @confs = Conf.all
+  erb :settings_attributes
+end
+
+get '/settings/devices' do
+  @devices = Device.all
+  erb :settings_devices
+end
+
+get '/settings/routers' do
+  @routers = Router.all
+  erb :settings_routers
+end
 #get '/settings' do
 #  @routers = Router.all
 #  @devices = Device.all
