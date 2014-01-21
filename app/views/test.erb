@@ -30,8 +30,8 @@
 					<thead>
 						<tr>
 							<th><h4>ID</h4></th>
-							<th><h4>Address</h4></th>
 							<th><h4>Description</h4></th>
+							<th><h4>Address</h4></th>
 						</tr>
 					</thead>
     <tbody>
@@ -41,10 +41,10 @@
 					<%= ::Temple::Utils.escape_html((router.router_id)) %>
 				</td>
 				<td>
-					<%= ::Temple::Utils.escape_html((router.router_address)) %>
+					<%= ::Temple::Utils.escape_html((router.router_desc)) %>
 				</td>
 				<td>
-					<%= ::Temple::Utils.escape_html((router.router_desc)) %>
+					<%= ::Temple::Utils.escape_html((router.router_address)) %>
 				</td>
 			</tr>
 		<% end %>

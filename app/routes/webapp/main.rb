@@ -9,4 +9,4 @@ get ('/blinds') { erb :blinds}
 get ('/lights') { erb :lights}
 get ('/sensors') {erb :sensors}
 #get ('/settings') { erb :settings}
-get ('/test') { erb :test}
+get ('/test') { slim :test}
