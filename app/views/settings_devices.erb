@@ -26,7 +26,7 @@
 <div class="navbar navbar-inverse">
   <div class="navbar-inner">
     <ul class="nav">
-      <li><a href="/settings/attributes">Attributes</a></li>
+      <li><a href="/settings/keys">Keys</a></li>
       <li class="active"><a href="/settings/devices">Devices</a></li>
 	  <li><a href="/settings/routers">Routers</a></li>
     </ul>
@@ -49,7 +49,7 @@
 </thead>
 
 <tbody>
-	<ul class="device"> <% @devices.each do |device| %>
+	<ul class="devices"> <% @devices.each do |device| %>
 		<tr>
 			<td>
 				<%= ::Temple::Utils.escape_html((device.device_id)) %>
@@ -64,7 +64,7 @@
 				<%= ::Temple::Utils.escape_html((device.device_type)) %>
 			</td>
 			<td>
-				<%= ::Temple::Utils.escape_html((device.device_router)) %>
+				<%= ::Temple::Utils.escape_html((device.device_routerid)) %>
 			</td>
 		<% end %>
 	</ul>

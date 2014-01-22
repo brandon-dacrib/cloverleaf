@@ -26,7 +26,7 @@
 <div class="navbar navbar-inverse">
   <div class="navbar-inner">
     <ul class="nav">
-      <li><a href="settings/attributes">Attributes</a></li>
+      <li><a href="settings/keys">Keys</a></li>
       <li><a href="settings/devices">Devices</a></li>
 	  <li><a href="settings/routers">Routers</a></li>
     </ul>
@@ -87,7 +87,7 @@
 					<%= ::Temple::Utils.escape_html((device.device_address)) %>
 				</td>
 				<td>
-					<%= ::Temple::Utils.escape_html((device.device_router)) %>
+					<%= ::Temple::Utils.escape_html((device.device_routerid)) %>
 				</td>
 			</tr>
 		<% end %>
@@ -97,22 +97,22 @@
 <thead>
 	<tr>
 		<th><h4>ID</h4></th>
-		<th><h4>Attribute</h4></th>
+		<th><h4>Key</h4></th>
 		<th><h4>Value</h4></th>
 	</tr>
 </thead>
 
 <tbody>
-    	<ul class="conf"> <% @confs.each do |conf| %>
+    	<ul class="key"> <% @keys.each do |key| %>
 			<tr>
 				<td>
-					<%= ::Temple::Utils.escape_html((conf.id)) %>
+					<%= ::Temple::Utils.escape_html((key.key_id)) %>
 				</td>
 				<td>
-					<%= ::Temple::Utils.escape_html((conf.attribute)) %>
+					<%= ::Temple::Utils.escape_html((key.key)) %>
 				</td>
 				<td>
-					<%= ::Temple::Utils.escape_html((conf.value)) %>
+					<%= ::Temple::Utils.escape_html((key.value)) %>
 				</td>
 		<% end %>
 		</ul>

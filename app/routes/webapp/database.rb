@@ -27,8 +27,16 @@ DB = Sequel.sqlite('/Users/brandon/Documents/devel/cloverleaf/app/tests/sequelte
 #	Text	:value, :null => false
 #end
 #
-#class Routers < Sequel::Model
-#end
+
+class Devices < Sequel::Model
+end
+
+class Keys < Sequel::Model
+end
+
+class Routers < Sequel::Model
+#Routers.set_dataset :routers
+end
 
 routers = DB[:routers] #create a dataset + insert some data into it
 #routers.insert(:router_address => '192.168.1.204', :router_desc => 'ISY994i', :router_auth_user => 'admin', :router_auth_pass => 'admin')
@@ -42,8 +50,4 @@ keys = DB[:keys]
 # Print out the number of records
 puts "Router records: #{routers.all}"
 
-get '/settings/routers' do
-	@routers = routers
-	erb	:settings_routers
-end
 
