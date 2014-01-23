@@ -51,6 +51,6 @@ keys = DB[:keys]
 #keys.insert(:key => 'wunderground_zip', :value => '10044')
 #
 # Print out the number of records
-puts "Router records: #{routers.all}"
+#puts "Router records: #{routers.all}"
 
 
