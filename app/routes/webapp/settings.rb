@@ -26,8 +26,7 @@ get '/settings/routers' do
 end
 
 post '/settings/keys' do
-	#@keys = Keys.create(params[:inkey])
 	@keys = Keys
-	Keys.insert(:key => 'Sharon', :value => rand * 100)
+	Keys.insert(:key => params[:key], :value => params[:value])
 	erb	:settings_keys
 end
