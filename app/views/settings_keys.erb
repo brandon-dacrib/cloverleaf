@@ -61,7 +61,7 @@
 			</td>
 			<td>
 				<a class="btn btn-primary type="submit"" href="#"><i class="icon-pencil icon-white"></i> Edit</a>
-				
+
 				<a class="btn btn-danger type="submit"" href="#"><i class="icon-trash icon-white"></i> Delete</a>
         	</td>
 
@@ -82,6 +82,15 @@
 		<input type="text" class="form-control" name="value" placeholder="value">
 		<div class="form-actions">
 		<button type="submit" class="btn btn-success">add</button>
+		</div>
+  	</div>
+</form>
+<form class="keys" role="form-inline" method="post">
+	<div class="form-group">
+		<input type="hidden" name="_method" value="DELETE">
+		<input type="text" class="form-control" name="key_id" placeholder="key_id">
+		<div class="form-actions">
+		<button type="submit" class="btn btn-danger">delete</button>
 		</div>
   	</div>
 </form>

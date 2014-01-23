@@ -37,8 +37,8 @@ post '/settings/keys' do
 	erb	:settings_keys
 end
 
-delete '/settings/keys/' do
+delete '/settings/keys' do
 	@keys = Keys
-	Keys.delete(:key_id => params[:key_id])
+	Keys.where(:key_id => params[:key_id]).delete
 	erb :settings_keys
 end
