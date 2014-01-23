@@ -1,8 +1,13 @@
+#get '/settings' do
+#	@devices = Devices
+#	@keys = Keys
+#	@routers = Routers
+#	erb :settings
+#end
+
 get '/settings' do
-	@devices = Devices
 	@keys = Keys
-	@routers = Routers
-	erb :settings
+	erb :settings_keys
 end
 
 get '/settings/devices' do

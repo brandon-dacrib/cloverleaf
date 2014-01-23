@@ -11,6 +11,8 @@ DB = Sequel.sqlite('/Users/brandon/Documents/devel/cloverleaf/app/tests/sequelte
 #	Text	:router_desc, :unique => true
 #	Text	:router_auth_user
 #	Text	:router_auth_pass
+#   Integer	:router_port, :null => false
+#   Text	:router_protocol, :null => false
 #end
 #
 #DB.create_table :devices do
