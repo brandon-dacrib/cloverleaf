@@ -45,6 +45,7 @@
 		<th><h4>Address</h4></th>
 		<th><h4>Protocol</h4></th>
 		<th><h4>Port</h4></th>
+		<th><h4>Type</h4></th>
 	</tr>
 </thead>
 
@@ -65,6 +66,9 @@
 			</td>
 			<td>
 				<%= ::Temple::Utils.escape_html((router.router_port)) %>
+			</td>
+			<td>
+				<%= ::Temple::Utils.escape_html((router.router_type)) %>
 			</td>
 		<% end %>
 	</ul>
