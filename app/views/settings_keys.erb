@@ -43,6 +43,7 @@
 		<th><h4>ID</h4></th>
 		<th><h4>Key</h4></th>
 		<th><h4>Value</h4></th>
+		<th><h4>Edit</h4>
 	</tr>
 </thead>
 
@@ -58,6 +59,13 @@
 			<td>
 				<%= ::Temple::Utils.escape_html((key.value)) %>
 			</td>
+			<td>
+				<a class="btn btn-primary type="submit"" href="#"><i class="icon-pencil icon-white"></i> Edit</a>
+				
+				<a class="btn btn-danger type="submit"" href="#"><i class="icon-trash icon-white"></i> Delete</a>
+        	</td>
+
+
 		<% end %>
 	</ul>
 </tbody>
@@ -68,7 +76,7 @@
 </script>
 </script>
 </body>
-<form class="addkey" role="form-inline" method="post">
+<form class="keys" role="form-inline" method="post">
 	<div class="form-group">
 		<input type="text" class="form-control" name="key" placeholder="key">
 		<input type="text" class="form-control" name="value" placeholder="value">
