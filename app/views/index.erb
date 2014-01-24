@@ -7,23 +7,7 @@
 	<link href="/bootstrap/css/bootstrap.css" rel="stylesheet">
 	<link href="/css/cloverleaf.css" rel="stylesheet">
   </head>
-  <body>
-	  <div class="navbar">
-	    <div class="navbar-inner">
-	      <a class="brand" href="#">Cloverleaf Dashboard</a>
-	      <ul class="nav">
-			  <li class="divider-vertical"></li>
-	        <li><a href="lights">Lights</a></li>
-			<li class="divider-vertical"></li>
-	        <li><a href="sensors">Sensors</a></li>
-			<li class="divider-vertical"></li>
-	        <li><a href="blinds">Blinds</a></li>
-			<li class="divider-vertical"></li>
-			<li><a href="settings">Settings</a></li>
-			<li class="divider-vertical"></li>
-	      </ul>
-	    </div>
-	  </div>
+	<%= ERB.new(File.read("views/navbar.erb"), 0, "-").result(binding) %>
     <script src="http://code.jquery.com/jquery.js"></script>
     <script src="/bootstrap/js/bootstrap.min.js"></script>
 	<div class="row">
