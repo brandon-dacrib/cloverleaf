@@ -1,9 +1,30 @@
 <div class="navbar navbar-inverse">
 	<div class="navbar-inner">
 		<ul class="nav">
-			<li><a href="/settings/keys">Keys</a></li>
-			<li><a href="/settings/devices">Devices</a></li>
-			<li><a href="/settings/routers">Routers</a></li>
+			<% if request.path_info == "/settings/keys" %>
+				<li class="divider-vertical"></li>
+				<li class="active"><a href="/settings/keys">Keys</a></li>
+			<% else %>
+				<li class="divider-vertical"></li>
+				<li><a href="/settings/keys">Keys</a></li>
+			<% end %>
+
+			<% if request.path_info == "/settings/devices" %>
+				<li class="divider-vertical"></li>
+				<li class="active"><a href="/settings/devices">Devices</a></li>
+			<% else %>
+				<li class="divider-vertical"></li>
+				<li><a href="/settings/devices">Devices</a></li>
+			<% end %>
+
+			<% if request.path_info == "/settings/routers" %>
+				<li class="divider-vertical"></li>
+				<li class="active"><a href="/settings/routers">Routers</a></li>
+			<% else %>
+				<li class="divider-vertical"></li>
+				<li><a href="/settings/routers">Routers</a></li>
+			<% end %>
+
 		</ul>
 	</div>
 </div>

@@ -4,11 +4,13 @@
     <title>Cloverleaf Dashboard</title>
     <!-- Bootstrap -->
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
-	<link href="css/cloverlead.css" rel="stylesheet">
+	<link href="css/cloverleaf.css" rel="stylesheet">
   </head>
+  
 	<%= ERB.new(File.read("views/navbar.erb"), 0, "-").result(binding) %>
     <script src="http://code.jquery.com/jquery.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
+    
 	<div class="row">
 		<div class="span12">
 			<div class="btn-lights">
