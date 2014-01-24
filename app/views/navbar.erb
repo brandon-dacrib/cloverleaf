@@ -4,7 +4,11 @@
 			<a class="brand" href="#">Cloverleaf Dashboard</a>
 				<ul class="nav">
 					<li class="divider-vertical"></li>
+					<% if request.path_info == "/lights" %>
+					<li class="active"><a href="/lights">Lights</a></li>
+					<% else %>
 					<li><a href="/lights">Lights</a></li>
+					<% end %>
 					<li class="divider-vertical"></li>
 					<li><a href="/sensors">Sensors</a></li>
 					<li class="divider-vertical"></li>
@@ -14,4 +18,5 @@
 					<li class="divider-vertical"></li>
 	      		</ul>
 	    </div>
+	</div>
 </body>
