@@ -3,95 +3,66 @@
   <head>
     <title>Cloverleaf Dashboard</title>
     <!-- Bootstrap -->
-	<link href="/bootstrap/css/bootstrap.css" rel="stylesheet">
-	<link href="/css/cloverleaf.css" rel="stylesheet">
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/lights.css" rel="stylesheet">
   </head>
-<%= ERB.new(File.read("views/navbar.erb"), 0, "-").result(binding) %>
-<%= ERB.new(File.read("views/settings_nav.erb"), 0, "-").result(binding) %>
-
+  <body>
+	  <div class="navbar">
+	    <div class="navbar-inner">
+	      <a class="brand" href="#">Cloverleaf Dashboard</a>
+	      <ul class="nav">
+			  <li class="divider-vertical"></li>
+	        <li><a href="lights">Lights</a></li>
+			<li class="divider-vertical"></li>
+	        <li><a href="sensors">Sensors</a></li>
+			<li class="divider-vertical"></li>
+	        <li><a href="blinds">Blinds</a></li>
+			<li class="divider-vertical"></li>
+			<li class="active"><a href="settings">Settings</a></li>
+			<li class="divider-vertical"></li>
+	      </ul>
+	    </div>
+	  </div>
     <script src="http://code.jquery.com/jquery.js"></script>
-    <script src="/bootstrap/js/bootstrap.min.js"></script>
-    	<h2>Keys Devices Routers</h2>
-    		<table class="table table-striped table-bordered">
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+	<div class="row">
+		<div class="span12">
+			<div class="btn-lights">
+				<table class="table table-striped">
 					<thead>
 						<tr>
-							<th><h4>ID</h4></th>
-							<th><h4>Address</h4></th>
-							<th><h4>Description</h4></th>
+							<th>Item</th>
+							<span class="label label-info">Work in progress.</span>
+							<th>Action</th>
 						</tr>
 					</thead>
-    <tbody>
-    	<ul class="routers"> <% @routers.each do |router| %>
-			<tr>
-				<td>
-					<%= ::Temple::Utils.escape_html((router.router_id)) %>
-				</td>
-				<td>
-					<%= ::Temple::Utils.escape_html((router.router_address)) %>
-				</td>
-				<td>
-					<%= ::Temple::Utils.escape_html((router.router_desc)) %>
-				</td>
-			</tr>
-		<% end %>
-		</ul>
-	</tbody>
-
-<thead>
-	<tr>
-		<th><h4>ID</h4></th>
-		<th><h4>Description</h4></th>
-		<th><h4>Type</h4></th>
-		<th><h4>Address</h4></th>
-		<th><h4>Router</h4></th>
-	</tr>
-</thead>
-
-<tbody>
-    	<ul class="devices"> <% @devices.each do |device| %>
-			<tr>
-				<td>
-					<%= ::Temple::Utils.escape_html((device.device_id)) %>
-				</td>
-				<td>
-					<%= ::Temple::Utils.escape_html((device.device_desc)) %>
-				</td>
-				<td>
-					<%= ::Temple::Utils.escape_html((device.device_type)) %>
-				</td>
-				<td>
-					<%= ::Temple::Utils.escape_html((device.device_address)) %>
-				</td>
-				<td>
-					<%= ::Temple::Utils.escape_html((device.device_routerid)) %>
-				</td>
-			</tr>
-		<% end %>
-		</ul>
-	</tbody>
-
-<thead>
-	<tr>
-		<th><h4>ID</h4></th>
-		<th><h4>Key</h4></th>
-		<th><h4>Value</h4></th>
-	</tr>
-</thead>
-
-<tbody>
-    	<ul class="key"> <% @keys.each do |key| %>
-			<tr>
-				<td>
-					<%= ::Temple::Utils.escape_html((key.key_id)) %>
-				</td>
-				<td>
-					<%= ::Temple::Utils.escape_html((key.key)) %>
-				</td>
-				<td>
-					<%= ::Temple::Utils.escape_html((key.value)) %>
-				</td>
-			</tr>
-		<% end %>
-		</ul>
-	</tbody>
-	</table>
+					
+					<tbody>
+						<tr>
+							<td><button class="span3 btn-success btn-large"> Living Room Blinds</button></td>
+							<td><button class="btn btn-primary btn-large"><i class="icon-white icon-arrow-up"></i> Up</button></td>
+							<td><button class="btn btn-primary btn-large"><i class="icon-white icon-arrow-down"></i> Down</button></td>
+							<td><button class="btn btn-primary btn-large"><i class="icon-white icon-stop"></i> Stop</button></td>				
+						</tr>
+						<tr>
+							<td><button class="span3 btn-success btn-large"> Master Bedroom Blinds</button></td>
+							<td><button class="btn btn-primary btn-large"><i class="icon-white icon-arrow-up"></i> Up</button></td>
+							<td><button class="btn btn-primary btn-large"><i class="icon-white icon-arrow-down"></i> Down</button></td>
+							<td><button class="btn btn-primary btn-large"><i class="icon-white icon-stop"></i> Stop</button></td>	
+						</tr>
+						<tr>
+							<td><button class="span3 btn-success btn-large"> Spare Bedroom Blinds</button></td>
+							<td><button class="btn btn-primary btn-large"><i class="icon-white icon-arrow-up"></i> Up</button></td>
+							<td><button class="btn btn-primary btn-large"><i class="icon-white icon-arrow-down"></i> Down</button></td>	
+							<td><button class="btn btn-primary btn-large"><i class="icon-white icon-stop"></i> Stop</button></td>
+						</tr>
+						<tr>
+							<td><button class="span3 btn-success btn-large"> Other Item</button></td>
+							<td><button class="btn-danger btn-large">Off</button></td>
+						</tr>
+					</tbody>
+	  </div>
+  </div>
+  <div>
+  </body>
+</html>
