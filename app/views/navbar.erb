@@ -1,0 +1,36 @@
+<body>
+	<div class="navbar">
+		<div class="navbar-inner">
+			<a class="brand" href="#">Cloverleaf Dashboard</a>
+				<ul class="nav">
+					<li class="divider-vertical"></li>
+						<% if request.path_info == "/lights" %>
+							<li class="active"><a href="/lights">Lights</a></li>
+						<% else %>
+							<li><a href="/lights">Lights</a></li>
+							<li class="divider-vertical"></li>
+						<% end %>
+
+						<% if request.path_info == "/sensors" %>
+							<li class="active"><a href="/sensors">Sensors</a></li>
+						<% else %>
+							<li><a href="/sensors">Sensors</a></li>
+							<li class="divider-vertical"></li>
+						<% end %>
+	
+						<% if request.path_info == "/blinds" %>
+							<li class="active"><a href="/blinds">Blinds</a></li>
+						<% else %>
+							<li><a href="/blinds">Blinds</a></li>
+							<li class="divider-vertical"></li>
+						<% end %>
+	
+						<% if request.path_info == "/settings" %>
+							<li class="active"><a href="/settings">Settings</a></li>
+						<% else %>
+							<li><a href="/settings">Settings</a></li>
+							<li class="divider-vertical"></li>
+						<% end %>
+	      		</ul>
+	</div>
+</body>

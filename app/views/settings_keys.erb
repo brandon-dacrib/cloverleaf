@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cloverleaf Dashboard</title>
+    <!-- Bootstrap -->
+	<link href="/bootstrap/css/bootstrap.css" rel="stylesheet">
+	<link href="/css/cloverleaf.css" rel="stylesheet">
+  </head>
+<%= ERB.new(File.read("views/navbar.erb"), 0, "-").result(binding) %>
+<%= ERB.new(File.read("views/settings_nav.erb"), 0, "-").result(binding) %>
+
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="/bootstrap/js/bootstrap.min.js"></script>
+    	<h2>Keys</h2>
+    		<table class="table table-striped table-bordered">
+
+<thead>
+	<tr>
+		<th><h4>ID</h4></th>
+		<th><h4>Key</h4></th>
+		<th><h4>Value</h4></th>
+		<th><h4>Edit</h4>
+	</tr>
+</thead>
+
+<tbody>
+	<ul class="keys"> <% @keys.each do |key| %>
+		<tr>
+			<td>
+				<%= ::Temple::Utils.escape_html((key.key_id)) %>
+			</td>
+			<td>
+				<%= ::Temple::Utils.escape_html((key.key)) %>
+			</td>
+			<td>
+				<%= ::Temple::Utils.escape_html((key.value)) %>
+			</td>
+			<td>
+				<a class="btn btn-primary type="submit"" href="#"><i class="icon-pencil icon-white"></i> Edit</a>
+
+				<a class="btn btn-danger type="submit"" href="#"><i class="icon-trash icon-white"></i> Delete</a>
+        	</td>
+
+
+		<% end %>
+	</ul>
+</tbody>
+</tr>
+</ul>
+</tbody>
+</table>
+</script>
+</script>
+</body>
+<form class="keys" role="form-inline" method="post">
+	<div class="form-group">
+		<input type="text" class="form-control" name="key" placeholder="key">
+		<input type="text" class="form-control" name="value" placeholder="value">
+		<div class="form-actions">
+		<button type="submit" class="btn btn-success">add</button>
+		</div>
+  	</div>
+</form>
+<form class="keys" role="form-inline" method="post">
+	<div class="form-group">
+		<input type="hidden" name="_method" value="DELETE">
+		<input type="text" class="form-control" name="key_id" placeholder="key_id">
+		<div class="form-actions">
+		<button type="submit" class="btn btn-danger">delete</button>
+		</div>
+  	</div>
+</form>
+</html>
