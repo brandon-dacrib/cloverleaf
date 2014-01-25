@@ -36,9 +36,3 @@ post '/settings/keys' do
 	Keys.insert(:key => params[:key], :value => params[:value])
 	erb	:settings_keys
 end
-
-delete '/settings/keys' do
-	@keys = Keys
-	Keys.where(:key_id => params[:key_id]).delete
-	erb :settings_keys
-end

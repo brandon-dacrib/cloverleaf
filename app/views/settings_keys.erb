@@ -36,14 +36,13 @@
 				<%= ::Temple::Utils.escape_html((key.value)) %>
 			</td>
 			<td>
-				<a class="btn btn-primary type="submit"" href="#"><i class="icon-pencil icon-white"></i> Edit</a>
-
-				<a class="btn btn-danger type="submit"" href="#"><i class="icon-trash icon-white"></i> Delete</a>
+				<!-- <button class="btn btn-primary"><i class="icon-pencil icon-white"></i> Edit</button> -->
+				<%= key_id = ::Temple::Utils.escape_html((key.key_id)) %>
+				<button class="btn btn-danger" data-switch-uri="/api/settings/delete/key_id/<%= key_id %>"> Delete</button>
         	</td>
-
-
 		<% end %>
 	</ul>
+
 </tbody>
 </tr>
 </ul>
@@ -70,4 +69,5 @@
 		</div>
   	</div>
 </form>
+<script src="/js/cloverleaf.js"></script>
 </html>
