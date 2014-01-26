@@ -3,26 +3,16 @@
 <!--<%= Time.now %>-->
 <link href="/css/cloverleaf.css" rel="stylesheet">
 <%= ERB.new(File.read("views/navbar.erb"), 0, "-").result(binding) %>
-  <head>
-    <title>Cloverleaf Dashboard</title>
-  </head>
-	<div class="row">
-		<div class="span12">
-			<div class="btn-lights">
-				<table class="table table-striped">
-					<thead>
-					
-					</thead>
-					
-					<tbody>
-<div class="jumbotron">
-  <h1>Cloverleaf Dashboard</h1>
-  <p>Click on the button below button to get started.</p>
-  <p><a href="lights" class="btn btn-primary btn-large" role="button">Lights</a></p>
-</div>
-					</tbody>
-	  </div>
-  </div>
-  <div>
-  </body>
+	<head>
+    	<title>Cloverleaf Dashboard</title>
+  	</head>
+		<div class="row">
+			<div class="jumbotron">
+				<div class="btn-lights">
+  				<h1>Cloverleaf Dashboard</h1>
+  					<p>Click on the button below button to get started.</p>
+  					<p><a href="lights" class="btn btn-primary btn-large" role="button">Lights</a></p>
+				</div>
+	  		</div>
+  		</div>
 </html>
