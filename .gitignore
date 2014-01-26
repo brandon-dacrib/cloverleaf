@@ -7,4 +7,4 @@ GeoIP.dat
 .floo
 .flooignore
 app/bundle/Gemfile.lock
-cloverleaf.db
+app/data/sqlite/cloverleaf.db
