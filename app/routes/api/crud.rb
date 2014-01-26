@@ -13,8 +13,12 @@ end
 get '/api/settings/delete/key/:key_id' do
 	@keys = Keys
 	Keys.where(:key_id => params[:key_id]).delete
-	redirect '/settings/keys', 302
-	erb :settings_keys
+	if
+		request.ip == "127.0.0.1"
+		redirect '/settings/keys', 302
+		erb :settings_keys
+	else
+	end
 end
 
 post '/api/settings/update/key/' do
