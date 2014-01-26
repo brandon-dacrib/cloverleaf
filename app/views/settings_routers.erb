@@ -1,16 +1,11 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Cloverleaf Dashboard</title>
-    <!-- Bootstrap -->
-	<link href="/bootstrap/css/bootstrap.css" rel="stylesheet">
-	<link href="/css/cloverleaf.css" rel="stylesheet">
-  </head>
+<link href="/css/cloverleaf.css" rel="stylesheet">
 <%= ERB.new(File.read("views/navbar.erb"), 0, "-").result(binding) %>
 <%= ERB.new(File.read("views/settings_nav.erb"), 0, "-").result(binding) %>
-
-    <script src="http://code.jquery.com/jquery.js"></script>
-    <script src="/bootstrap/js/bootstrap.min.js"></script>
+  <head>
+    <title>Cloverleaf Dashboard</title>
+  </head>
     	<h2>Routers</h2>
     		<table class="table table-striped table-bordered dashboard">
 
