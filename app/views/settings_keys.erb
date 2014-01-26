@@ -6,30 +6,33 @@
 	<link href="/bootstrap/css/bootstrap.css" rel="stylesheet">
 	<link href="/css/cloverleaf.css" rel="stylesheet">
   </head>
-<%= ERB.new(File.read("views/navbar.erb"), 0, "-").result(binding) %>
-<%= ERB.new(File.read("views/settings_nav.erb"), 0, "-").result(binding) %>
+	<%= ERB.new(File.read("views/navbar.erb"), 0, "-").result(binding) %>
+	<%= ERB.new(File.read("views/settings_nav.erb"), 0, "-").result(binding) %>
 
-    <script src="http://code.jquery.com/jquery.js"></script>
-    <script src="/bootstrap/js/bootstrap.min.js"></script>
+	<script src="http://code.jquery.com/jquery-2.0.3.min.js"></script> 
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap-theme.min.css">
+	<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
     <link href="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/css/bootstrap-editable.css" rel="stylesheet"/>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/js/bootstrap-editable.min.js"></script>
 
+
     	<h2>Keys</h2>
+    		<form class="keys" role="form-inline" method="post">
     		<table class="table table-striped table-bordered dashboard">
 
-	<form class="keys" role="form-inline" method="post">
 		<div class="form-group">
 			<input type="text" class="form-control" name="key" placeholder="key">
 			<input type="text" class="form-control" name="value" placeholder="value">
 			<button type="submit" class="btn btn-success"><i class="icon-plus-sign icon-white"></i> Add</button>
   		</div>
 	</form>
-
 <thead>
 	<tr>
 		<th><h4>ID</h4></th>
 		<th><h4>Key</h4></th>
 		<th><h4>Value</h4></th>
+		<th><h4>Delete</h4></th>
 	</tr>
 </thead>
 
@@ -49,6 +52,7 @@
 				<%= ::Temple::Utils.escape_html((key.value)) %>
 				</a>
 			</td>
+			<td> <%= (key.key_id) %> </td>
 		<% end %>
 	</ul>
 
@@ -56,6 +60,7 @@
 </tr>
 </ul>
 </tbody>
+</table>
 </table>
 </script>
 </script>

@@ -18,13 +18,9 @@ end
 
 post '/api/settings/update/key/' do
 	@keys = Keys
-	#Keys.where(:key_id => params[:key_id].update)
 	table = params[:name]
 	puts table
 	Keys.where(:key_id => params[:pk]).update(table => params[:value])
-	#params.keys.each do |k|
- 	#puts "#{k} - #{params[k]}"
- #end
 	erb :settings_keys
 end
 

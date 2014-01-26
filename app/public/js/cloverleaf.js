@@ -101,7 +101,7 @@ function eraseCookie(name) {
 
 $(document).ready(function(){
   LEAF.init();
-$.fn.editable.defaults.mode = 'inline';
+$.fn.editable.defaults.mode = 'popup';
 $('#key').editable();
 $('#value').editable();
 });
