@@ -13,7 +13,7 @@
     <script src="/bootstrap/js/bootstrap.min.js"></script>
     <link href="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/css/bootstrap-editable.css" rel="stylesheet"/>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/js/bootstrap-editable.min.js"></script>
-	
+
     	<h2>Keys</h2>
     		<table class="table table-striped table-bordered dashboard">
 
@@ -30,7 +30,6 @@
 		<th><h4>ID</h4></th>
 		<th><h4>Key</h4></th>
 		<th><h4>Value</h4></th>
-		<th><h4>Edit</h4>
 	</tr>
 </thead>
 
@@ -38,18 +37,18 @@
 	<ul class="keys"> <% @keys.each do |key| %>
 		<tr>
 			<td>
-				<%= ::Temple::Utils.escape_html((key.key_id)) %>
+				<%= (key.key_id) %>
 			</td>
 			<td>
-				<%= ::Temple::Utils.escape_html((key.key)) %>
+				<a href="#" id="key" data-type="text" data-pk="<%= key.key_id %>" data-url="/api/settings/update/key/" data-title="enter key">
+				<%= (key.key) %>
+				</a>
 			</td>
 			<td>
+				<a href="#" id="value" data-type="text" data-pk="<%= key.key_id %>" data-url="/api/settings/update/key/" data-title="enter value">
 				<%= ::Temple::Utils.escape_html((key.value)) %>
+				</a>
 			</td>
-			<td>
-				<!-- <button class="btn btn-primary"><i class="icon-pencil icon-white"></i> Edit</button> -->
-				<button type="submit" class="btn btn-danger" data-switch-uri="/api/settings/delete/key_id/<%= ::Temple::Utils.escape_html((key.key_id)) %>"><i class="icon-trash icon-white"></i> Delete</button>
-        	</td>
 		<% end %>
 	</ul>
 
