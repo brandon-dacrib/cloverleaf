@@ -13,6 +13,7 @@ end
 get '/api/settings/delete/key/:key_id' do
 	@keys = Keys
 	Keys.where(:key_id => params[:key_id]).delete
+	redirect '/settings/keys', 302
 	erb :settings_keys
 end
 

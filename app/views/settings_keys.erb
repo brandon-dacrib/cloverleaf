@@ -45,7 +45,10 @@
 				<%= ::Temple::Utils.escape_html((key.value)) %>
 				</a>
 			</td>
-			<td> <%= (key.key_id) %> </td>
+			<td>
+				<a href="/api/settings/delete/key/<%= key.key_id %>" class="btn btn-danger">
+				<i class="icon-white icon-minus-sign"></i> Delete</a>
+			</td>
 		<% end %>
 	</ul>
 
