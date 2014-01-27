@@ -9,9 +9,9 @@ require 'logger'
 class ISY
   include HTTParty
   @keys = Keys
-    @isy_uri  = Keys.select(:value).where[:key => 'isy_uri']
-    @isy_user = Keys.select(:value).where[:key => 'isy_user']
-    @isy_pass = Keys.select(:value).where[:key => 'isy_pass']
+    @isy_uri  = Keys.select(:value).where[:key => 'isy_uri'].value
+    @isy_user = Keys.select(:value).where[:key => 'isy_user'].value
+    @isy_pass = Keys.select(:value).where[:key => 'isy_pass'].value
     print " uri: #{@isy_uri} user: #{@isy_user} pass: #{@isy_pass}"
 
   # Create bits for httparty
