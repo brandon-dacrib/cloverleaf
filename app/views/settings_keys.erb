@@ -16,8 +16,9 @@
 					<input type="text" name="value" placeholder="value">
 					<button type="submit" class="btn btn-success btn-lg"><i class="icon-plus-sign icon-white"></i> Add</button>
   				</div>
-<table class="table table-striped table-bordered dashboard">
-			</form>
+  			</form>
+
+<table class="table table-striped table-bordered table-condensed dashboard">
 <thead>
 	<tr>
 		<th><h4>ID</h4></th>
@@ -26,30 +27,27 @@
 		<th><h4>Delete</h4></th>
 	</tr>
 </thead>
-
-	<ul> <% @keys.each do |key| %>
-		<tr>
-			<td>
-				<%= ::Temple::Utils.escape_html((key.key_id)) %>
-			</td>
-			<td>
-				<a href="#" id="key" data-type="text" data-pk="<%= key.key_id %>" data-url="/api/settings/update/key/" data-title="enter key">
-				<%= ::Temple::Utils.escape_html((key.key)) %>
-				</a>
-			</td>
-			<td>
-				<a href="#" id="value" data-type="text" data-pk="<%= key.key_id %>" data-url="/api/settings/update/key/" data-title="enter value">
-				<%= ::Temple::Utils.escape_html((key.value)) %>
-				</a>
-			</td>
-			<td>
-				<a href="/api/settings/delete/key/<%= key.key_id %>" class="dashboard btn btn-danger">
-				<i class="icon-white icon-minus-sign"></i> Delete</a>
-			</td>
-		<% end %>
-	</ul>
+<% @keys.each do |key| %>
+<tr>
+	<td>
+		<%= ::Temple::Utils.escape_html((key.key_id)) %>
+	</td>
+	<td>
+		<a href="#" id="key" data-type="text" data-pk="<%= key.key_id %>" data-url="/api/settings/update/key/" data-title="enter key">
+		<%= ::Temple::Utils.escape_html((key.key)) %>
+		</a>
+	</td>
+	<td>
+		<a href="#" id="value" data-type="text" data-pk="<%= key.key_id %>" data-url="/api/settings/update/key/" data-title="enter value">
+		<%= ::Temple::Utils.escape_html((key.value)) %>
+		</a>
+	</td>
+	<td>
+		<a href="/api/settings/delete/key/<%= key.key_id %>" class="dashboard btn btn-danger">
+		<i class="icon-white icon-minus-sign"></i> Delete</a>
+	</td>
+	</tr>	
+<% end %>	
 </table>
-
-
 
 </html>
