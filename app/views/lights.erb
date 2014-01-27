@@ -2,9 +2,11 @@
 <html>
 <link href="/css/cloverleaf.css" rel="stylesheet">
 <%= ERB.new(File.read("views/navbar.erb"), 0, "-").result(binding) %>
-  <head>
-    <title>Cloverleaf Dashboard</title>
-  </head>
+<script src="/js/cloverleaf.js"></script>
+
+ 	<head>
+    	<title>Cloverleaf Dashboard</title>
+ 	</head>
 
 	<div class="row">
 		<div class="span12">
@@ -21,55 +23,25 @@
 					
 					<tbody>
 						<tr>
-						<td><button class="span3 btn btn-success btn-large" data-switch-uri="/api/do/21%2016%2039%201/1/"> Master Bedroom</button></td>
-						<td><button class="span3 btn btn-danger btn-large" data-switch-uri="/api/do/21%2016%2039%201/0/"> Master Bedroom</button></td>
-						<td>
-							<div class="btn-group">
-								<button type="button" class="btn span3 btn-warning btn-large dropdown-toggle" data-toggle="dropdown">Dim <span class="caret"></span></button> <ul class="dropdown-menu pull-right" role="menu" >
-									<li><a id="dimLight" href="#">25%</a></li>
-									<li><a href="#">50%</a></li>
-									<li><a href="#">75%</a></li>
-									<li><a href="#">100%</a></li>
-								</ul>
-							</div>
-								<td><button class="btn btn-large disabled">On</button></td>
-						</td>
+							<% @devices.each do |device| %>
+								<td><button class="span3 btn btn-success btn-large" data-switch-uri="/api/do/<%= ::Temple::Utils.escape_html((device.device_id)) %>/1/"> <%= ::Temple::Utils.escape_html((device.device_desc)) %></button></td>
+								<td><button class="span3 btn btn-danger btn-large" data-switch-uri="/api/do/<%= ::Temple::Utils.escape_html((device.device_id)) %>/0/"> <%= ::Temple::Utils.escape_html((device.device_desc)) %></button></td>
+								<td>
+									<div class="btn-group">
+										<button type="button" class="btn span3 btn-warning btn-large dropdown-toggle" data-toggle="dropdown">Dim <span class="caret"></span></button> <ul class="dropdown-menu pull-right" role="menu" >
+										<li><a id="dimLight" href="#">25%</a></li>
+										<li><a href="#">50%</a></li>
+										<li><a href="#">75%</a></li>
+										<li><a href="#">100%</a></li>
+									</div>
+								</td>
+								<td>
+									<button class="btn btn-large btn-inverse disabled">Off</button>
+								</td>
 						</tr>
-
-						<tr>
-						<td><button class="span3 btn btn-success btn-large" data-switch-uri="/api/do/23 6A 9 1/1/"> Living Room</button></td>
-						<td><button class="span3 btn btn-danger btn-large" data-switch-uri="/api/do/23 6A 9 1/0/"> Living Room</button></td>
-						<td>
-							<div class="btn-group">
-								<button type="button" class="span3 btn btn-warning btn-large dropdown-toggle disabled" data-toggle="dropdown">Dim <span class="caret"></span></button> <ul class="dropdown-menu" role="menu">
-									<li><a id="dimLight" href="#">25%</a></li>
-									<li><a href="#">50%</a></li>
-									<li><a href="#">75%</a></li>
-									<li><a href="#">100%</a></li>
-								</ul>
-							</div>
-							<td><button class="btn btn-large btn-inverse disabled">Off</button></td>
-						</td>
-						</tr>
-
-						<tr>
-						<td><button class="span3 btn btn-success btn-large" data-switch-uri="/api/do/21 12 BE 1/1/"> Second Bedroom</button></td>
-						<td><button class="span3 btn btn-danger btn-large" data-switch-uri="/api/do/21 12 BE 1/0/"> Second Bedroom</button></td>
-						<td>
-							<div class="btn-group">
-								<button type="button" class="span3 btn btn-warning btn-large dropdown-toggle " data-toggle="dropdown">Dim <span class="caret"></span></button> <ul class="dropdown-menu pull-right" role="menu">
-									<li><a id="dimLight" href="#">25%</a></li>
-									<li><a href="#">50%</a></li>
-									<li><a href="#">75%</a></li>
-									<li><a href="#">100%</a></li>
-								</ul>
-							</div>
-							<td><button class="btn btn-large btn-inverse disabled">Off</button></td>
-						</td>
-						</tr>
+						<% end %>
 					</tbody>
 	  </div>
+	</div>
   </div>
-  <div>
-  <script src="/js/cloverleaf.js"></script>
 </html>
