@@ -1,10 +1,4 @@
-#get '/settings' do
-#	@devices = Devices
-#	@keys = Keys
-#	@routers = Routers
-#	erb :settings
-#end
-
+## settings ##
 get '/settings' do
 	redirect '/settings/keys', 302
 	erb :settings_keys
@@ -31,3 +25,4 @@ post '/settings/keys' do
 	Keys.insert(:key => params[:key], :value => params[:value])
 	erb	:settings_keys
 end
+## settings ##

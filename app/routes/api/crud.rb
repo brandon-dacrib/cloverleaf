@@ -1,6 +1,7 @@
-get '/api/settings/create/key/:key_id' do
+## settings ##
+post '/api/settings/create/key/' do
 	@keys = Keys
-	Keys.where(:key_id => params[:key_id].insert)
+	keys.insert(:key => params[:key], :value => params[:value])
 	erb :settings_keys
 end
 
@@ -28,8 +29,7 @@ post '/api/settings/update/key/' do
 	Keys.where(:key_id => params[:pk]).update(table => params[:value])
 	erb :settings_keys
 end
+## end settings ##
 
-#
-#name - value
-#value - 100422
-#pk - 1
+## routers ##
+#get '/api/settings/create/key/'
