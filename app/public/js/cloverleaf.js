@@ -101,9 +101,9 @@ function eraseCookie(name) {
 
 $(document).ready(function(){
   LEAF.init();
+// add support for x-edit to certain tables
 $.fn.editable.defaults.mode = 'popup';
-$('#key').editable();
-$('#value').editable();
+$('#edit a.editable').editable();
 });
 
 })(window.jQuery);

@@ -3,7 +3,6 @@
 require 'uri'
 require 'sequel'
 require 'logger'
-#require '/Users/brandon/Documents/devel/cloverleaf/app/routes/api/database.rb'
 
 
 class ISY

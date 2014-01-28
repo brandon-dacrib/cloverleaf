@@ -18,7 +18,7 @@
   				</div>
   			</form>
 
-<table class="table table-striped table-bordered table-condensed dashboard">
+<table class="table table-striped table-bordered table-condensed dashboard" id="edit">
 <thead>
 	<tr>
 		<th><h4>ID</h4></th>
@@ -33,12 +33,12 @@
 		<%= ::Temple::Utils.escape_html((key.key_id)) %>
 	</td>
 	<td>
-		<a href="#" id="key" data-type="text" data-pk="<%= key.key_id %>" data-url="/api/settings/update/key/" data-title="enter key">
+		<a href="#" class="editable" id="key" data-type="text" data-pk="<%= key.key_id %>" data-url="/api/settings/update/key/" data-title="enter key">
 		<%= ::Temple::Utils.escape_html((key.key)) %>
 		</a>
 	</td>
 	<td>
-		<a href="#" id="value" data-type="text" data-pk="<%= key.key_id %>" data-url="/api/settings/update/key/" data-title="enter value">
+		<a href="#" class="editable" id="value" data-type="text" data-pk="<%= key.key_id %>" data-url="/api/settings/update/key/" data-title="enter value">
 		<%= ::Temple::Utils.escape_html((key.value)) %>
 		</a>
 	</td>
