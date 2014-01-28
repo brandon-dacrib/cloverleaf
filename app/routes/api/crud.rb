@@ -27,9 +27,33 @@ post '/api/settings/update/key/' do
 	table = params[:name]
 	puts table
 	Keys.where(:key_id => params[:pk]).update(table => params[:value])
-	erb :settings_keys
+	erb :settings_routers
 end
 ## end settings ##
 
 ## routers ##
-#get '/api/settings/create/key/'
+post '/api/settings/create/router/' do
+	@routers = Routers
+	routers.insert(:router_address => params[:router_address], :router_desc => params[:router_desc], :router_auth_user => params[:router_auth_user], :router_auth_pass => params[:router_auth_pass], :router_port => params[:router_port], :router_protocol => params[:router_protocol], :router_type => params[:router_type])
+	erb :settings_routers
+end
+
+#get '/api/settings/read/router/:key_id' do
+#	@keys = Keys
+#	Keys.where(:key_id => params[:key_id].select)
+#	erb :settings_keys
+#end
+
+get '/api/settings/delete/router/:router_id' do
+	@routers = Routers
+	Keys.where(:router_id => params[:router_id]).delete
+	erb :settings_routers
+end
+
+post '/api/settings/update/router/' do
+	@routers = Routers
+	column = params[:name]
+	puts table
+	Routers.where(:router_id => params[:pk]).update(column => params[:value])
+	erb :settings_routers
+end
