@@ -28,10 +28,11 @@ end
 
 get '/api/do/:nodeid/0/*' do
   node = URI.encode("#{params[:nodeid]}")
-  address = Devices.select(:device_address).where[:device_id => params[:nodeid]]
-  routerid = Devices.select(:device_routerid).where[:device_id => params[:nodeid]]
-  router_address = Routers.select(:router_address).where[:router_id => "#{routerid}"]
+  @address = Devices.select(:device_address).where[:device_id => params[:nodeid]].device_address
+  @router_id = Devices.select(:device_routerid).where[:device_id => params[:nodeid]].device_routerid
+  @router_address = Routers.select(:router_address).where[:router_id => "#{@router_id}"].router_address
   response = ISY.get("/rest/nodes/#{node}/cmd/DFOF")
+  puts "this: #{@address} this: #{@router_id} that: #{@router_address}"
   puts response.code, response.body, response.message, response.headers.inspect
   @output = response.message
   "#{@output}"
