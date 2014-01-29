@@ -26,21 +26,25 @@ class Router
   @routers = Routers
 end
 
-get '/api/do/:nodeid/0/*' do
-  node = URI.encode("#{params[:nodeid]}")
-  @address = Devices.select(:device_address).where[:device_id => params[:nodeid]].device_address
-  @router_id = Devices.select(:device_routerid).where[:device_id => params[:nodeid]].device_routerid
-  @router_address = Routers.select(:router_address).where[:router_id => "#{@router_id}"].router_address
-  response = ISY.get("/rest/nodes/#{node}/cmd/DFOF")
-  puts "this: #{@address} this: #{@router_id} that: #{@router_address}"
+get '/api/do/:device_id/0/*' do
+  @device_id = "#{params[:device_id]}"
+  @device_address = URI.encode(Devices.select(:device_address).where[:device_id => params[:device_id]].device_address)
+  @device_routerid = Devices.select(:device_routerid).where[:device_id => params[:device_id]].device_routerid
+  @router_address = Routers.select(:router_address).where[:router_id => "#{@device_routerid}"].router_address
+  response = ISY.get("/rest/nodes/#{@device_address}/cmd/DFOF")
+  puts "device_id: #{@device_id} device_address: #{@device_address} device_routerid: #{@device_routerid} router_address: #{@router_address}"
   puts response.code, response.body, response.message, response.headers.inspect
   @output = response.message
   "#{@output}"
 end
 
-get '/api/do/:nodeid/1/*' do
-  node = URI.encode("#{params[:nodeid]}")
-  response = ISY.get("/rest/nodes/#{node}/cmd/DFON")
+get '/api/do/:device_id/1/*' do
+  @device_id = URI.encode("#{params[:device_id]}")
+  @device_address = URI.encode(Devices.select(:device_address).where[:device_id => params[:device_id]].device_address)
+  @device_routerid = Devices.select(:device_routerid).where[:device_id => params[:device_id]].device_routerid
+  @router_address = Routers.select(:router_address).where[:router_id => "#{@device_routerid}"].router_address
+  response = ISY.get("/rest/nodes/#{@device_address}/cmd/DFON")
+  puts "device_id: #{@device_id} device_address: #{@device_address} device_routerid: #{@device_routerid} router_address: #{@router_address}"
   puts response.code, response.body, response.message, response.headers.inspect
   @output = response.message
   "#{@output}"
