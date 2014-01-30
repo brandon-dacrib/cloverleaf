@@ -12,7 +12,7 @@ DB.create_table :routers do
 	Text	:router_auth_pass
    Integer	:router_port, :null => false
    Text	:router_protocol, :null => false
-   Integer	:router_type, :null => false
+   Text	:router_type, :null => false
 end
 
 DB.create_table :devices do
