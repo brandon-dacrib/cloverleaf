@@ -50,7 +50,7 @@ case @device_routertype
     system("modules/limitlessled-rgb.rb off") 
     puts "device_id: #{@device_id} device_address: #{@device_address} device_routerid: #{@device_routerid} device_router_type: #{@device_routertype} router_address: #{@router_address}"
   when "lirc"
-    system("modules/lirc.rb #{@remote} #{@action}")
+    system("modules/lirc.rb #{@device_id} POWER")
   else "puts device_routertype unknown"
 end
 end
