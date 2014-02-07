@@ -1,5 +1,3 @@
-#insteon devices attached to an ISY99 have a resful API documented here: #http://wiki.universal-devices.com/index.php?title=ISY-99i_Series_INSTEON:REST_Interface
-#for those we really just need to translate the URL, samples below
 require 'uri'
 require 'sequel'
 require 'logger'
@@ -49,8 +47,6 @@ case @device_routertype
   when "limitlessled"
     system("modules/limitlessled-rgb.rb off") 
     puts "device_id: #{@device_id} device_address: #{@device_address} device_routerid: #{@device_routerid} device_router_type: #{@device_routertype} router_address: #{@router_address}"
-  when "lirc"
-    system("modules/lirc.rb #{@device_id} POWER")
   else "puts device_routertype unknown"
 end
 end
