@@ -1,6 +1,5 @@
 require 'sequel'
 require 'logger'
-require 'sinatra/sequel'
 
 DB = Sequel.sqlite('data/sqlite/cloverleaf.db', :loggers => [Logger.new($stdout)]) 
 #DB = Sequel.sqlite('', :loggers => [Logger.new($stdout)])
