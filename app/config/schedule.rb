@@ -30,12 +30,13 @@ every :weekday, :at => '7:15am' do
 	command "#{cwd}/modules/say.rb 'Gabriel take your q var' "
 end
 
-every '0 12 * * 1-5' do
-  require 'parseconfig'
-  conf = ParseConfig.new("#{cwd}/config/cloverleaf.conf")
-  dawn_mobile = conf['dawn_mobile']
-  command "cd #{cwd}; #{cwd}/modules/notify.rb sms #{dawn_mobile} 'Reminder: drink some water'"
-end
+#needs to pull data from db 
+#every '0 12 * * 1-5' do
+#  require 'parseconfig'
+#  conf = ParseConfig.new("#{cwd}/config/cloverleaf.conf")
+#  dawn_mobile = conf['dawn_mobile']
+#  command "cd #{cwd}; #{cwd}/modules/notify.rb sms #{dawn_mobile} 'Reminder: drink some water'"
+#end
 
 every '59 09,11 * * *' do
   command "#{cwd}/modules/wunderground.rb current | xargs #{cwd}/modules/say.rb"
