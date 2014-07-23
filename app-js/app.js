@@ -1,7 +1,7 @@
 var express = require('express');
 var app = express();
 
-app.get('/do/:nodeid/:action', function(req, res){
+app.get('/api/do/:nodeid/:action', function(req, res){
   var url = req.url;
   var nodeid = req.params.nodeid;
   var action = req.params.action;
