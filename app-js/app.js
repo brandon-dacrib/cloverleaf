@@ -20,7 +20,7 @@ switch(call) {
 	client = new Client();
 	client.get("http://cloverleaf/api/" + call  + "/" + item + "/" + action + "/", function(data, response){
 		//res.send(data);
-		//console.log(response);
+	//console.log(data);
 	});
 
 	break;
