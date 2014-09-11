@@ -49,3 +49,6 @@ end
 #every :day, :at => '7:30pm' do
 #  command "#{cwd}/modules/wunderground.rb forecast 1 | xargs #{cwd}/modules/say.rb"
 #end
+every :day, :at => '7:30pm' do
+  command "#{cwd}/modules/wunderground.rb forecast 1 | xargs #{cwd}/modules/say.rb"
+end
