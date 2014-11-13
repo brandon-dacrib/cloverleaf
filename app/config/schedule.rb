@@ -26,7 +26,7 @@ every :weekday, :at => '8:30pm' do
   command "#{cwd}/modules/say.rb 'Gabriel it is time to go to bed' "
 end
 
-every :weekday, :at => '8:01am' do
+every :weekday, :at => '7:15am' do
 	command "#{cwd}/modules/say.rb 'Gabriel take your q-varr' "
 end
 
@@ -38,14 +38,17 @@ end
 #  command "cd #{cwd}; #{cwd}/modules/notify.rb sms #{dawn_mobile} 'Reminder: drink some water'"
 #end
 
-every '59 09,11 * * *' do
-  command "#{cwd}/modules/wunderground.rb current | xargs #{cwd}/modules/say.rb"
-end
+#every '59 09,11 * * *' do
+#  command "#{cwd}/modules/wunderground.rb current | xargs #{cwd}/modules/say.rb"
+#end
 
-every :weekday, :at => '7:59am' do
-  command "#{cwd}/modules/wunderground.rb forecast today | xargs #{cwd}/modules/say.rb"
-end
+#every :weekday, :at => '8:01am' do
+#  command "#{cwd}/modules/wunderground.rb forecast today | xargs #{cwd}/modules/say.rb"
+#end
 
+#every :day, :at => '7:30pm' do
+#  command "#{cwd}/modules/wunderground.rb forecast 1 | xargs #{cwd}/modules/say.rb"
+#end
 every :day, :at => '7:30pm' do
   command "#{cwd}/modules/wunderground.rb forecast 1 | xargs #{cwd}/modules/say.rb"
 end
