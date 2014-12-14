@@ -1,13 +1,14 @@
 var express = require('express');
 var app = express();
-
+tts = require('node-tts-api');
+var layer = require('player');
 
 app.get('/api/:call/:item?/:action?', function(req, res){
   var url = req.url;
   var call = req.params.call;
   var item = req.params.item;
   var action = req.params.action;
-  res.send("url: " + url + "\nitem: " + item + "\naction: " + action);
+  res.send("\r\nurl: " + url + "\r\nitem: " + item + "\naction: " + action);
 
 switch(call) {
 	case 'do':
@@ -19,16 +20,19 @@ switch(call) {
 	var Client = require('node-rest-client').Client;
 	client = new Client();
 	client.get("http://cloverleaf/api/" + call  + "/" + item + "/" + action + "/", function(data, response){
-		//res.send(data);
+	//res.send(data);
 	//console.log(data);
 	});
-
 	break;
 
 	case 'say':
 	console.log ("the call is say");
 	console.log ("the item is "+ item);
 	console.log ("request url is: "+ req.url);
+	utter = item;
+	tts.getSpeech(utter, function(error, link) {
+	return console.log(link);
+	});
 	break;
 
 	case 'play':
@@ -44,23 +48,8 @@ switch(call) {
 
 }
 
-//var Client = require('node-rest-client').Client;
-//client = new Client();
-
-//direct way
-//client.get("http://cloverleaf/" + url, function(data, response){
-	//parsed response body as js object
-	//console.log(data);
-	//raw response
-	//res.send(data);
-	//console.log(response);
-//	console.log ("request url is: "+ req.url);
-//	console.log ("item is: "+ item);
-//	console.log ("action is: "+ action);
-//});
-
 });
 
-var server = app.listen(3000, function() {
+var server = app.listen(8080, function() {
     console.log('Listening on port %d', server.address().port);
 });
