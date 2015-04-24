@@ -14,7 +14,7 @@ every :weekday, :at => '7:30pm' do
 	command "#{cwd}/modules/say.rb 'Gabriel get in the shower' "
 end
 
-every :weekday, :at => '7:55pm' do
+every :weekday, :at => '6:55pm' do
   command "#{cwd}/modules/say.rb 'Gabriel make sure you have taken your medicine, and brushed your teeth' "
 end
 
